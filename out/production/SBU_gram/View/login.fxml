@@ -10,10 +10,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="450.0" maxWidth="363.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="363.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
+<AnchorPane fx:id="anchorPane" maxHeight="464.0" maxWidth="363.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="363.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-      <Pane fx:id="pane" layoutX="10.0" layoutY="11.0" maxHeight="451.0" maxWidth="363.0" prefHeight="428.0" prefWidth="343.0">
+      <Pane fx:id="pane" layoutX="10.0" layoutY="18.0" maxHeight="451.0" maxWidth="363.0" prefHeight="428.0" prefWidth="343.0">
          <children>
             <PasswordField fx:id="passwordField" layoutX="67.0" layoutY="250.0" prefHeight="25.0" prefWidth="208.0" promptText="Password" />
             <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="108.0" layoutY="304.0" onAction="#login" prefHeight="31.0" prefWidth="127.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Login" textFill="WHITE" />

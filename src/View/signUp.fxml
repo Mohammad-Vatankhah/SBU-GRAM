@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="600.0" maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignupController">
+   <children>
+      <TextField fx:id="usernameField" layoutX="100.0" layoutY="322.0" prefHeight="31.0" prefWidth="199.0" promptText="Username" />
+      <PasswordField fx:id="passwordField" layoutX="101.0" layoutY="362.0" prefHeight="31.0" prefWidth="199.0" promptText="Password" />
+      <TextField fx:id="firstNameField" layoutX="100.0" layoutY="190.0" prefHeight="31.0" prefWidth="199.0" promptText="First name" />
+      <TextField fx:id="lastNAmeField" layoutX="100.0" layoutY="235.0" prefHeight="31.0" prefWidth="199.0" promptText="Last name" />
+      <JFXButton fx:id="signupButton" buttonType="RAISED" layoutX="137.0" layoutY="414.0" onAction="#signUp" prefHeight="31.0" prefWidth="127.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Sign up" textFill="WHITE" />
+      <Label layoutX="131.0" layoutY="494.0" text="Already have an account? " />
+      <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="136.0" layoutY="511.0" onAction="#login" prefHeight="31.0" prefWidth="127.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Log in" textFill="WHITE" />
+      <TextField fx:id="PhoneNumberField" layoutX="101.0" layoutY="278.0" prefHeight="31.0" prefWidth="199.0" promptText="Phone number" />
+      <JFXCheckBox layoutX="309.0" layoutY="369.0" onAction="#showPass" text="show" />
+      <TextField fx:id="passwordVisible" layoutX="100.0" layoutY="363.0" prefHeight="31.0" prefWidth="199.0" promptText="Password" visible="false" />
+   </children>
+</Pane>

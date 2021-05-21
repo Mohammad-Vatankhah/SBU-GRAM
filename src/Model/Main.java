@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         PageLoader.initStage(primaryStage);
-        new PageLoader().load("login");
+        new PageLoader().load("login" , 363 , 470);
     }
 
 

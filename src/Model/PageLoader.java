@@ -14,15 +14,11 @@ public class PageLoader {
 
     private static Stage stage;
     private static Scene scene;
-    public static final int WIDTH = 363;
-    public static final int HEIGHT = 464;
 
 
     public static void initStage(Stage primaryStage){
         stage = primaryStage;
         stage.setTitle("SBU GRAM");
-        stage.setWidth(WIDTH);
-        stage.setHeight(HEIGHT);
         stage.initStyle(StageStyle.DECORATED);
         stage.setResizable(false);
         stage.getIcons().add(new Image(Paths.get("images/Untitled.png").toUri().toString()));
@@ -41,8 +37,10 @@ public class PageLoader {
         return stage;
     }
 
-    public void load(String url) throws IOException {
+    public void load(String url , int width , int height) throws IOException {
         scene = new Scene(new PageLoader().loadFXML(url));
+        stage.setWidth(width);
+        stage.setHeight(height);
         stage.setScene(scene);
         stage.show();
     }
