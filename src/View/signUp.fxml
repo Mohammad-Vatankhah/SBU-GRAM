@@ -10,15 +10,19 @@
 
 <Pane maxHeight="600.0" maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignupController">
    <children>
-      <TextField fx:id="usernameField" layoutX="100.0" layoutY="322.0" prefHeight="31.0" prefWidth="199.0" promptText="Username" />
-      <PasswordField fx:id="passwordField" layoutX="101.0" layoutY="362.0" prefHeight="31.0" prefWidth="199.0" promptText="Password" />
-      <TextField fx:id="firstNameField" layoutX="100.0" layoutY="190.0" prefHeight="31.0" prefWidth="199.0" promptText="First name" />
-      <TextField fx:id="lastNAmeField" layoutX="100.0" layoutY="235.0" prefHeight="31.0" prefWidth="199.0" promptText="Last name" />
-      <JFXButton fx:id="signupButton" buttonType="RAISED" layoutX="137.0" layoutY="414.0" onAction="#signUp" prefHeight="31.0" prefWidth="127.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Sign up" textFill="WHITE" />
-      <Label layoutX="131.0" layoutY="494.0" text="Already have an account? " />
-      <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="136.0" layoutY="511.0" onAction="#login" prefHeight="31.0" prefWidth="127.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Log in" textFill="WHITE" />
-      <TextField fx:id="PhoneNumberField" layoutX="101.0" layoutY="278.0" prefHeight="31.0" prefWidth="199.0" promptText="Phone number" />
-      <JFXCheckBox layoutX="309.0" layoutY="369.0" onAction="#showPass" text="show" />
+      <TextField fx:id="usernameField" layoutX="99.0" layoutY="356.0" prefHeight="31.0" prefWidth="199.0" promptText="Username" />
+      <PasswordField fx:id="passwordField" layoutX="99.0" layoutY="395.0" prefHeight="31.0" prefWidth="199.0" promptText="Password" />
+      <TextField fx:id="firstNameField" layoutX="99.0" layoutY="165.0" prefHeight="31.0" prefWidth="199.0" promptText="First name" />
+      <TextField fx:id="lastNAmeField" layoutX="99.0" layoutY="203.0" prefHeight="31.0" prefWidth="199.0" promptText="Last name" />
+      <JFXButton fx:id="signupButton" buttonType="RAISED" layoutX="137.0" layoutY="474.0" onAction="#signUp" prefHeight="31.0" prefWidth="127.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Sign up" textFill="WHITE" />
+      <Label layoutX="131.0" layoutY="513.0" text="Already have an account? " />
+      <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="135.0" layoutY="530.0" onAction="#login" prefHeight="31.0" prefWidth="127.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Log in" textFill="WHITE" />
+      <TextField fx:id="PhoneNumberField" layoutX="99.0" layoutY="318.0" prefHeight="31.0" prefWidth="199.0" promptText="Phone number" />
+      <JFXCheckBox layoutX="302.0" layoutY="402.0" onAction="#showPass" text="show" />
       <TextField fx:id="passwordVisible" layoutX="100.0" layoutY="363.0" prefHeight="31.0" prefWidth="199.0" promptText="Password" visible="false" />
+      <Label layoutX="68.0" layoutY="426.0" text="-Passwords should countain at least 8 characters." />
+      <Label layoutX="108.0" layoutY="443.0" text="(A mixture of letters and numbers)" />
+      <TextField fx:id="locationField" layoutX="99.0" layoutY="279.0" prefHeight="31.0" prefWidth="199.0" promptText="Location" />
+      <TextField fx:id="birthdateField" layoutX="99.0" layoutY="241.0" prefHeight="31.0" prefWidth="199.0" promptText="Birthdate" />
    </children>
 </Pane>

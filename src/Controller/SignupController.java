@@ -17,6 +17,8 @@ public class SignupController {
     public JFXButton loginButton;
     public TextField PhoneNumberField;
     public TextField passwordVisible;
+    public TextField locationField;
+    public TextField birthdateField;
 
     public void signUp(ActionEvent actionEvent) {
         String username = usernameField.getText();
@@ -24,6 +26,8 @@ public class SignupController {
         String name = firstNameField.getText();
         String lastName = lastNAmeField.getText();
         String phone = PhoneNumberField.getText();
+        String location = locationField.getText();
+        String birthdate = birthdateField.getText();
         if (passwordField.isVisible())
             password = passwordField.getText();
         else if (passwordVisible.isVisible())
