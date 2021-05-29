@@ -30,7 +30,7 @@ public class LoginController {
     }
 
     public void signUp(ActionEvent actionEvent) throws IOException {
-        new PageLoader().load("signUp" , 400 , 600);
+        new PageLoader().load("signUp" , 400 , 610);
     }
 
     public void showPass(ActionEvent actionEvent) {

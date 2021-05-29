@@ -8,6 +8,8 @@ public class User {
     private String lastName;
     private String birthdate;
     private String location;
+    private int followings = 0;
+    private int followers = 0;
 
     public User(String name ,String lastName , String birthdate , String location ,String phoneNumber, String username, String password) {
         this.username = username;
@@ -69,5 +71,21 @@ public class User {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public void setFollowers(int followers) {
+        this.followers = followers;
+    }
+
+    public int getFollowers() {
+        return followers;
+    }
+
+    public void setFollowings(int followings) {
+        this.followings = followings;
+    }
+
+    public int getFollowings() {
+        return followings;
     }
 }

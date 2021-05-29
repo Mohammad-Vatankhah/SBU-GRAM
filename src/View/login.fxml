@@ -16,14 +16,14 @@
       <Pane fx:id="pane" layoutX="10.0" layoutY="18.0" maxHeight="451.0" maxWidth="363.0" prefHeight="428.0" prefWidth="343.0">
          <children>
             <PasswordField fx:id="passwordField" layoutX="67.0" layoutY="250.0" prefHeight="25.0" prefWidth="208.0" promptText="Password" />
-            <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="108.0" layoutY="304.0" onAction="#login" prefHeight="31.0" prefWidth="127.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Login" textFill="WHITE" />
+            <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="108.0" layoutY="304.0" onAction="#login" prefHeight="31.0" prefWidth="127.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Log in" textFill="WHITE" />
             <TextField fx:id="usernameField" layoutX="67.0" layoutY="214.0" prefHeight="25.0" prefWidth="208.0" promptText="Username" />
             <ImageView fitHeight="175.0" fitWidth="200.0" layoutX="76.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/Untitled.png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="signupButton" buttonType="RAISED" layoutX="107.0" layoutY="374.0" onAction="#signUp" prefHeight="31.0" prefWidth="127.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Signup" textFill="WHITE" />
+            <JFXButton fx:id="signupButton" buttonType="RAISED" layoutX="107.0" layoutY="374.0" onAction="#signUp" prefHeight="31.0" prefWidth="127.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Sign up" textFill="WHITE" />
             <Label layoutX="107.0" layoutY="357.0" text="Don't  have an account?" />
             <Label fx:id="wrongPasswordLabel" layoutX="124.0" layoutY="275.0" text="Wrong password!" textFill="#d70000" visible="false" />
             <JFXCheckBox layoutX="275.0" layoutY="254.0" onAction="#showPass" prefHeight="0.0" prefWidth="0.0" text="show" />
