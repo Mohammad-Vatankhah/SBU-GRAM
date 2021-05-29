@@ -9,9 +9,10 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="600.0" maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignupController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignupController">
    <children>
       <TextField fx:id="usernameField" layoutX="99.0" layoutY="357.0" prefHeight="31.0" prefWidth="199.0" promptText="Username" />
       <PasswordField fx:id="passwordField" layoutX="99.0" layoutY="395.0" prefHeight="31.0" prefWidth="199.0" promptText="Password" />
@@ -30,7 +31,7 @@
       <JFXButton fx:id="addImageButton" buttonType="RAISED" layoutX="162.0" layoutY="126.0" onAction="#addImage" prefHeight="31.0" prefWidth="75.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Add image" textFill="WHITE" />
       <ImageView fitHeight="98.0" fitWidth="127.0" layoutX="150.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../images/user.png" />
+            <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/user.png" />
          </image>
       </ImageView>
       <Label fx:id="passwordRegexError" layoutX="74.0" layoutY="434.0" text="-your password does not meet the requirements." textFill="RED" visible="false" />
@@ -55,5 +56,6 @@
          </font>
       </Label>
       <Label fx:id="emptyFields" layoutX="113.0" layoutY="435.0" text="please fill the fields which have *." textFill="RED" visible="false" />
+      <Circle fx:id="circleProfile" fill="DODGERBLUE" layoutX="199.0" layoutY="71.0" radius="49.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
    </children>
 </Pane>

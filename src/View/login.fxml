@@ -20,7 +20,7 @@
             <TextField fx:id="usernameField" layoutX="67.0" layoutY="214.0" prefHeight="25.0" prefWidth="208.0" promptText="Username" />
             <ImageView fitHeight="175.0" fitWidth="200.0" layoutX="76.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/Untitled.png" />
+                  <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/SBU gram icon.png" />
                </image>
             </ImageView>
             <JFXButton fx:id="signupButton" buttonType="RAISED" layoutX="107.0" layoutY="374.0" onAction="#signUp" prefHeight="31.0" prefWidth="127.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Sign up" textFill="WHITE" />

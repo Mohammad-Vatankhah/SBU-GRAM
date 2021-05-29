@@ -21,7 +21,7 @@ public class PageLoader {
         stage.setTitle("SBU GRAM");
         stage.initStyle(StageStyle.DECORATED);
         stage.setResizable(false);
-        stage.getIcons().add(new Image(Paths.get("images/Untitled.png").toUri().toString()));
+        stage.getIcons().add(new Image(Paths.get("images/SBU gram icon.png").toUri().toString()));
     }
 
     public void setRoot(String fxml) throws IOException {

@@ -40,6 +40,7 @@ public class SignupController {
     public Label passwordHint1;
     public Label passwordHint2;
     public Label emptyFields;
+    public Circle circleProfile;
 
 
     public void signUp(ActionEvent actionEvent) {
@@ -117,7 +118,10 @@ public class SignupController {
         File selectedFile = fileChooser.showOpenDialog(null);
         if (selectedFile != null){
             Image image = new Image(selectedFile.toURI().toString());
-            profilePhoto.setImage(image);
+            circleProfile.setStroke(Color.SEAGREEN);
+            circleProfile.setFill(new ImagePattern(image));
+            circleProfile.setEffect(new DropShadow(+25d , 0d , +2d , Color.DARKSEAGREEN));
+            circleProfile.setVisible(true);
         }
     }
 }

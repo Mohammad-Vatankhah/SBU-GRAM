@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.ArrayList;
+
 public class User {
     private final String username;
     private String password;
@@ -8,8 +10,9 @@ public class User {
     private String lastName;
     private String birthdate;
     private String location;
-    private int followings = 0;
-    private int followers = 0;
+    private ArrayList<User> followings = new ArrayList<>();
+    private ArrayList<User> followers = new ArrayList<>();
+    private ArrayList<Post> posts = new ArrayList<>();
 
     public User(String name ,String lastName , String birthdate , String location ,String phoneNumber, String username, String password) {
         this.username = username;
@@ -73,19 +76,26 @@ public class User {
         this.location = location;
     }
 
-    public void setFollowers(int followers) {
-        this.followers = followers;
+    public ArrayList<User> getFollowings() {
+        return followings;
     }
 
-    public int getFollowers() {
+    public void addFollowings(User user) {
+        this.followings.add(user);
+    }
+
+    public ArrayList<User> getFollowers() {
         return followers;
     }
 
-    public void setFollowings(int followings) {
-        this.followings = followings;
+    public void addFollowers(User user) {
+        this.followers.add(user);
     }
 
-    public int getFollowings() {
-        return followings;
+    public ArrayList<Post> getPosts() {
+        return posts;
+    }
+    public void addPost(Post post){
+        this.posts.add(post);
     }
 }
