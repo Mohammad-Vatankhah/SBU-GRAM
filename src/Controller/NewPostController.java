@@ -7,6 +7,7 @@ import com.jfoenix.controls.JFXTextArea;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 
@@ -22,9 +23,18 @@ public class NewPostController {
     }
 
     public void feedButton(ActionEvent actionEvent) throws IOException {
-        new PageLoader().load("feed" , 400 , 610);
+        new PageLoader().load("feed" , 400 , 637);
     }
 
-    public void profileButton(ActionEvent actionEvent) {
+    public void profileButton(ActionEvent actionEvent) throws IOException {
+        new PageLoader().load("profilePage" , 400 , 637);
+    }
+
+    public void profileImage(MouseEvent mouseEvent) throws IOException {
+        new PageLoader().load("profilePage" , 400 , 637);
+    }
+
+    public void feedImage(MouseEvent mouseEvent) throws IOException {
+        new PageLoader().load("feed" , 400 , 637);
     }
 }

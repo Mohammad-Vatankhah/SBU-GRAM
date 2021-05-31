@@ -5,6 +5,7 @@ import Model.Post;
 import com.jfoenix.controls.JFXListView;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,9 +20,18 @@ public class FeedController {
     ArrayList<Post> posts = new ArrayList<>();
 
     public void newPostButton(ActionEvent actionEvent) throws IOException {
-        new PageLoader().load("newPost" , 400 , 610);
+        new PageLoader().load("newPost" , 400 , 637);
     }
 
-    public void profileButton(ActionEvent actionEvent) {
+    public void profileButton(ActionEvent actionEvent) throws IOException {
+        new PageLoader().load("profilePage" , 400 , 637);
+    }
+
+    public void newPostImage(MouseEvent mouseEvent) throws IOException {
+        new PageLoader().load("newPost" , 400 , 637);
+    }
+
+    public void profileImage(MouseEvent mouseEvent) throws IOException {
+        new PageLoader().load("profilePage" , 400 , 637);
     }
 }
