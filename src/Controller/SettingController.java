@@ -45,7 +45,8 @@ public class SettingController {
         new PageLoader().load("changePassword" , 363 , 470);
     }
 
-    public void editInformation(MouseEvent mouseEvent) {
+    public void editInformation(MouseEvent mouseEvent) throws IOException {
+        new PageLoader().load("editInformation" , 414 , 637);
 
     }
 
@@ -77,6 +78,7 @@ public class SettingController {
         new PageLoader().load("changePassword" , 363 , 470);
     }
 
-    public void editInformationImage(MouseEvent mouseEvent) {
+    public void editInformationImage(MouseEvent mouseEvent) throws IOException {
+        new PageLoader().load("editInformation" , 414 , 637);
     }
 }

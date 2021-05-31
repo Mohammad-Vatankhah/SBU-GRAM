@@ -32,6 +32,6 @@ public class FeedController {
     }
 
     public void profileImage(MouseEvent mouseEvent) throws IOException {
-        new PageLoader().load("profilePage" , 400 , 637);
+        new PageLoader().load("profilePage" , 414 , 637);
     }
 }
