@@ -20,15 +20,15 @@ public class FeedController {
     ArrayList<Post> posts = new ArrayList<>();
 
     public void newPostButton(ActionEvent actionEvent) throws IOException {
-        new PageLoader().load("newPost" , 400 , 637);
+        new PageLoader().load("newPost" , 414 , 637);
     }
 
     public void profileButton(ActionEvent actionEvent) throws IOException {
-        new PageLoader().load("profilePage" , 400 , 637);
+        new PageLoader().load("profilePage" , 414 , 637);
     }
 
     public void newPostImage(MouseEvent mouseEvent) throws IOException {
-        new PageLoader().load("newPost" , 400 , 637);
+        new PageLoader().load("newPost" , 414 , 637);
     }
 
     public void profileImage(MouseEvent mouseEvent) throws IOException {

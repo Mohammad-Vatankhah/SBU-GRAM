@@ -22,7 +22,7 @@ public class ChangePasswordController {
     }
 
     public void back(MouseEvent mouseEvent) throws IOException {
-        new PageLoader().load("setting" , 400 , 637);
+        new PageLoader().load("setting" , 414 , 637);
     }
 
 }

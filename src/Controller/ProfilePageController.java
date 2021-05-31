@@ -12,21 +12,22 @@ public class ProfilePageController {
     public Button newPostButton;
 
     public void feedButton(ActionEvent actionEvent) throws IOException {
-        new PageLoader().load("feed" , 400 , 637);
+        new PageLoader().load("feed" , 414 , 637);
     }
 
     public void newPostButton(ActionEvent actionEvent) throws IOException {
-        new PageLoader().load("newPost" , 400 , 637);
+        new PageLoader().load("newPost" , 414 , 637);
     }
 
     public void newPostImage(MouseEvent mouseEvent) throws IOException {
-        new PageLoader().load("newPost" , 400 , 637);
+        new PageLoader().load("newPost" , 414 , 637);
     }
 
     public void feedImage(MouseEvent mouseEvent) throws IOException {
-        new PageLoader().load("feed" , 400 , 637);
+        new PageLoader().load("feed" , 414 , 637);
     }
 
-    public void settingImage(MouseEvent mouseEvent) {
+    public void settingImage(MouseEvent mouseEvent) throws IOException {
+        new PageLoader().load("setting" , 414 , 637);
     }
 }

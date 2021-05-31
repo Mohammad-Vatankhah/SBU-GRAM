@@ -28,12 +28,12 @@ public class LoginController {
         else if (passwordVisible.isVisible())
             password = passwordVisible.getText();
         if (password.equals("mamad123456") && username.equals("mamadi"))
-            new PageLoader().load("feed" , 400 , 637);
+            new PageLoader().load("feed" , 414 , 637);
 
     }
 
     public void signUp(ActionEvent actionEvent) throws IOException {
-        new PageLoader().load("signUp" , 400 , 610);
+        new PageLoader().load("signUp" , 414 , 610);
     }
 
     public void showPass(ActionEvent actionEvent) {

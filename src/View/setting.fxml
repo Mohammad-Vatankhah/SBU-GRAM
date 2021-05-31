@@ -17,7 +17,7 @@
             <Font name="Sitka Small" size="17.0" />
          </font>
       </Label>
-      <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="14.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="14.0" layoutY="350.0" onMouseClicked="#changeProfileImage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/user.png" />
          </image>
@@ -27,7 +27,7 @@
             <Font name="Sitka Small" size="17.0" />
          </font>
       </Label>
-      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="14.0" layoutY="394.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="14.0" layoutY="394.0" onMouseClicked="#changePasswordImage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/password%20icon.png" />
          </image>
@@ -37,7 +37,7 @@
             <Font name="Sitka Small" size="17.0" />
          </font>
       </Label>
-      <ImageView fitHeight="31.0" fitWidth="45.0" layoutX="14.0" layoutY="440.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="31.0" fitWidth="45.0" layoutX="14.0" layoutY="440.0" onMouseClicked="#editInformationImage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/information%20icon.png" />
          </image>
@@ -52,6 +52,6 @@
             <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/back%20icon.png" />
          </image>
       </ImageView>
-      <Circle fx:id="circleProfile" fill="DODGERBLUE" layoutX="197.0" layoutY="279.0" radius="49.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="circleProfile" fill="DODGERBLUE" layoutX="197.0" layoutY="279.0" radius="49.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </Pane>

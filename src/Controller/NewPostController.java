@@ -23,18 +23,18 @@ public class NewPostController {
     }
 
     public void feedButton(ActionEvent actionEvent) throws IOException {
-        new PageLoader().load("feed" , 400 , 637);
+        new PageLoader().load("feed" , 414 , 637);
     }
 
     public void profileButton(ActionEvent actionEvent) throws IOException {
-        new PageLoader().load("profilePage" , 400 , 637);
+        new PageLoader().load("profilePage" , 414 , 637);
     }
 
     public void profileImage(MouseEvent mouseEvent) throws IOException {
-        new PageLoader().load("profilePage" , 400 , 637);
+        new PageLoader().load("profilePage" , 414 , 637);
     }
 
     public void feedImage(MouseEvent mouseEvent) throws IOException {
-        new PageLoader().load("feed" , 400 , 637);
+        new PageLoader().load("feed" , 414 , 637);
     }
 }

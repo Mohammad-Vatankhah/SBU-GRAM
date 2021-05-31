@@ -41,8 +41,8 @@ public class SettingController {
         }
     }
 
-    public void changePassword(MouseEvent mouseEvent) {
-
+    public void changePassword(MouseEvent mouseEvent) throws IOException {
+        new PageLoader().load("changePassword" , 363 , 470);
     }
 
     public void editInformation(MouseEvent mouseEvent) {
@@ -50,6 +50,33 @@ public class SettingController {
     }
 
     public void back(MouseEvent mouseEvent) throws IOException {
-        new PageLoader().load("profilePage" , 400 , 637);
+        new PageLoader().load("profilePage" , 414 , 637);
+    }
+
+    public void changeProfileImage(MouseEvent mouseEvent) {
+        FileChooser fileChooser = new FileChooser();
+        ArrayList<String> imageFormats = new ArrayList<>();
+        imageFormats.add("*.jpeg");
+        imageFormats.add("*.JPEG");
+        imageFormats.add("*.png");
+        imageFormats.add("*.PNG");
+        imageFormats.add("*.jpg");
+        imageFormats.add("*.JPG");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("images", imageFormats));
+        File selectedFile = fileChooser.showOpenDialog(null);
+        if (selectedFile != null){
+            Image image = new Image(selectedFile.toURI().toString());
+            circleProfile.setStroke(Color.SEAGREEN);
+            circleProfile.setFill(new ImagePattern(image));
+            circleProfile.setEffect(new DropShadow(+25d , 0d , +2d , Color.DARKSEAGREEN));
+            circleProfile.setVisible(true);
+        }
+    }
+
+    public void changePasswordImage(MouseEvent mouseEvent) throws IOException {
+        new PageLoader().load("changePassword" , 363 , 470);
+    }
+
+    public void editInformationImage(MouseEvent mouseEvent) {
     }
 }
