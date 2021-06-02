@@ -34,7 +34,7 @@
          </image>
       </ImageView>
       <JFXTextArea fx:id="descriptionField" focusColor="#11d819" layoutX="9.0" layoutY="279.0" prefHeight="185.0" prefWidth="379.0" promptText="Description" />
-      <JFXTextField fx:id="titleField" layoutX="9.0" layoutY="224.0" promptText="Title" />
+      <JFXTextField fx:id="titleField" focusColor="#11d819" layoutX="9.0" layoutY="224.0" promptText="Title" />
       <JFXButton fx:id="shareButton" buttonType="RAISED" layoutX="133.0" layoutY="487.0" onAction="#share" prefHeight="31.0" prefWidth="133.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Share!" textFill="WHITE" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="119.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
          <image>

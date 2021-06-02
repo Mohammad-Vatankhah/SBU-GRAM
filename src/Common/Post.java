@@ -1,14 +1,15 @@
-package Model;
+package Common;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Post {
-    private String writer;
+    private final String writer;
     private String title;
     private String description;
-    private int likes = 0;
+    private ArrayList<User> likes = new ArrayList<>();
     private int reposts = 0;
     private final Date date;
     private ConcurrentHashMap<Date , String> comments = new ConcurrentHashMap<>();
@@ -22,10 +23,6 @@ public class Post {
 
     public String getWriter() {
         return writer;
-    }
-
-    public void setWriter(String writer) {
-        this.writer = writer;
     }
 
     public String getTitle() {
@@ -48,11 +45,11 @@ public class Post {
         return date;
     }
 
-    public void addLike(){
-        this.likes++;
+    public void addLike(User user){
+        this.likes.add(user);
     }
 
-    public int getLikes() {
+    public ArrayList<User> getLikes() {
         return likes;
     }
 

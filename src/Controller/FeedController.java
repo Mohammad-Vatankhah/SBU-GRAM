@@ -1,9 +1,11 @@
 package Controller;
 
 import Model.PageLoader;
-import Model.Post;
+import Common.Post;
 import com.jfoenix.controls.JFXListView;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 
@@ -15,9 +17,15 @@ public class FeedController {
 
     public Button newPostButton;
     public Button profileButton;
-    public JFXListView<String> PostList;
+    public JFXListView<Post> postList;
     public Button feedButton;
     ArrayList<Post> posts = new ArrayList<>();
+
+    @FXML
+    public void initialize(){
+        postList.setItems(FXCollections.observableArrayList(posts));
+        postList.setCellFactory(postList -> new PostItem());
+    }
 
     public void newPostButton(ActionEvent actionEvent){
         try {

@@ -1,8 +1,11 @@
-package Model;
+package Common;
+
+import javafx.scene.image.Image;
 
 import java.util.ArrayList;
 
 public class User {
+    private Image profile;
     private final String username;
     private String password;
     private String phoneNumber;
@@ -14,12 +17,9 @@ public class User {
     private ArrayList<User> followers = new ArrayList<>();
     private ArrayList<Post> posts = new ArrayList<>();
 
-    public User(String name ,String lastName , String birthdate , String location ,String phoneNumber, String username, String password) {
+    public User(String name ,String lastName , String username, String password) {
         this.username = username;
         this.password = password;
-        this.phoneNumber = phoneNumber;
-        this.birthdate = birthdate;
-        this.location = location;
         this.name = name;
         this.lastName = lastName;
     }
