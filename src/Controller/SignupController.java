@@ -1,38 +1,37 @@
 package Controller;
 
 import Model.PageLoader;
-import javafx.scene.control.*;
-import javafx.scene.effect.DisplacementMap;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.JFXDatePicker;
+import javafx.event.ActionEvent;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
-import com.jfoenix.controls.JFXButton;
-import com.sun.glass.ui.CommonDialogs;
-import javafx.event.ActionEvent;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Path;
 import javafx.stage.FileChooser;
 
-import java.awt.image.BufferedImage;
-import java.io.*;
-import java.net.URL;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.ResourceBundle;
 
 public class SignupController {
     public TextField usernameField;
-    public PasswordField passwordField;
-    public TextField firstNameField;
-    public TextField lastNAmeField;
+    public JFXPasswordField passwordField;
+    public JFXTextField firstNameField;
+    public JFXTextField lastNAmeField;
     public JFXButton signupButton;
     public JFXButton loginButton;
-    public TextField PhoneNumberField;
-    public TextField passwordVisible;
-    public TextField locationField;
+    public JFXTextField PhoneNumberField;
+    public JFXTextField passwordVisible;
+    public JFXTextField locationField;
     public DatePicker birthdatePick;
     public JFXButton addImageButton;
     public ImageView profilePhoto;
@@ -88,8 +87,12 @@ public class SignupController {
 
     }
 
-    public void login(ActionEvent actionEvent) throws IOException {
-        new PageLoader().load("login" , 363 , 470);
+    public void login(ActionEvent actionEvent){
+        try {
+            new PageLoader().load("login" , 363 , 470);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void showPass(ActionEvent actionEvent) {
@@ -105,7 +108,7 @@ public class SignupController {
         }
     }
 
-    public void addImage(ActionEvent actionEvent) throws FileNotFoundException {
+    public void addImage(ActionEvent actionEvent){
         FileChooser fileChooser = new FileChooser();
         ArrayList<String> imageFormats = new ArrayList<>();
         imageFormats.add("*.jpeg");

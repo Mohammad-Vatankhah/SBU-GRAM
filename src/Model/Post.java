@@ -1,6 +1,8 @@
 package Model;
 
 import java.util.Date;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Post {
     private String writer;
@@ -9,6 +11,7 @@ public class Post {
     private int likes = 0;
     private int reposts = 0;
     private final Date date;
+    private ConcurrentHashMap<Date , String> comments = new ConcurrentHashMap<>();
 
     public Post(String writer, String title, String description , Date date) {
         this.writer = writer;
@@ -59,5 +62,13 @@ public class Post {
 
     public int getReposts() {
         return reposts;
+    }
+
+    public void addComment(Date date , String comment){
+        comments.put(date , comment);
+    }
+
+    public Map<Date, String> getComments() {
+        return comments;
     }
 }

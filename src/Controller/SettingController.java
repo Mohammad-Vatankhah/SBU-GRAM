@@ -17,8 +17,12 @@ import java.util.ArrayList;
 public class SettingController {
     public Circle circleProfile;
 
-    public void logout(ActionEvent actionEvent) throws IOException {
-        new PageLoader().load("login" , 363 , 470);
+    public void logout(ActionEvent actionEvent){
+        try {
+            new PageLoader().load("login" , 363 , 470);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void changeProfilePhoto(MouseEvent mouseEvent) {
@@ -41,17 +45,29 @@ public class SettingController {
         }
     }
 
-    public void changePassword(MouseEvent mouseEvent) throws IOException {
-        new PageLoader().load("changePassword" , 363 , 470);
+    public void changePassword(MouseEvent mouseEvent){
+        try {
+            new PageLoader().load("changePassword" , 363 , 470);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void editInformation(MouseEvent mouseEvent) throws IOException {
-        new PageLoader().load("editInformation" , 414 , 637);
+    public void editInformation(MouseEvent mouseEvent){
+        try {
+            new PageLoader().load("editInformation" , 414 , 637);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
-    public void back(MouseEvent mouseEvent) throws IOException {
-        new PageLoader().load("profilePage" , 414 , 637);
+    public void back(MouseEvent mouseEvent){
+        try {
+            new PageLoader().load("profilePage" , 414 , 637);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void changeProfileImage(MouseEvent mouseEvent) {
@@ -74,11 +90,19 @@ public class SettingController {
         }
     }
 
-    public void changePasswordImage(MouseEvent mouseEvent) throws IOException {
-        new PageLoader().load("changePassword" , 363 , 470);
+    public void changePasswordImage(MouseEvent mouseEvent){
+        try {
+            new PageLoader().load("changePassword" , 363 , 470);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void editInformationImage(MouseEvent mouseEvent) throws IOException {
-        new PageLoader().load("editInformation" , 414 , 637);
+    public void editInformationImage(MouseEvent mouseEvent){
+        try {
+            new PageLoader().load("editInformation" , 414 , 637);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

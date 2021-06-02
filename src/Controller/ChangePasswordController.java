@@ -1,17 +1,17 @@
 package Controller;
 
 import Model.PageLoader;
+import com.jfoenix.controls.JFXPasswordField;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 
 public class ChangePasswordController {
-    public PasswordField newPassword;
-    public PasswordField confirm;
-    public PasswordField currentPassword;
+    public JFXPasswordField newPassword;
+    public JFXPasswordField confirm;
+    public JFXPasswordField currentPassword;
     public Label matchError;
     public Label currentPassError;
 
@@ -21,8 +21,12 @@ public class ChangePasswordController {
         }
     }
 
-    public void back(MouseEvent mouseEvent) throws IOException {
-        new PageLoader().load("setting" , 414 , 637);
+    public void back(MouseEvent mouseEvent){
+        try {
+            new PageLoader().load("setting" , 414 , 637);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
+
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.EditInformationController">
    <children>
-      <TextField fx:id="firstNameField" layoutX="101.0" layoutY="226.0" prefHeight="31.0" prefWidth="199.0" promptText="First name" />
-      <TextField fx:id="lastNAmeField" layoutX="101.0" layoutY="278.0" prefHeight="31.0" prefWidth="199.0" promptText="Last name" />
+      <JFXTextField fx:id="firstNameField" focusColor="#11d819" layoutX="101.0" layoutY="226.0" prefHeight="31.0" prefWidth="199.0" promptText="First name" />
+      <JFXTextField fx:id="lastNAmeField" focusColor="#11d819" layoutX="101.0" layoutY="278.0" prefHeight="31.0" prefWidth="199.0" promptText="Last name" />
       <DatePicker fx:id="birthdatePick" layoutX="101.0" layoutY="331.0" prefHeight="31.0" prefWidth="199.0" promptText="Birthdate" />
-      <TextField fx:id="locationField" layoutX="101.0" layoutY="385.0" prefHeight="31.0" prefWidth="199.0" promptText="Location" />
-      <TextField fx:id="PhoneNumberField" layoutX="101.0" layoutY="438.0" prefHeight="31.0" prefWidth="199.0" promptText="Phone number" />
+      <JFXTextField fx:id="locationField" focusColor="#11d819" layoutX="101.0" layoutY="375.0" prefHeight="31.0" prefWidth="199.0" promptText="Location" />
+      <JFXTextField fx:id="PhoneNumberField" focusColor="#11d819" layoutX="101.0" layoutY="428.0" prefHeight="31.0" prefWidth="199.0" promptText="Phone number" />
       <ImageView fitHeight="19.0" fitWidth="23.0" layoutX="5.0" layoutY="4.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/back%20icon.png" />

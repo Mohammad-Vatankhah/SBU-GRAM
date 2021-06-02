@@ -3,35 +3,40 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.Pane?>
-
+<?import javafx.scene.control.TextField?>
+<?import com.jfoenix.controls.JFXTextField?>
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewPostController">
    <children>
-      <Button fx:id="feetButton" layoutX="-1.0" layoutY="560.0" mnemonicParsing="false" onAction="#feedButton" prefHeight="40.0" prefWidth="133.0" style="-fx-background-color: #11d819;" />
-      <Button fx:id="newPostButton" layoutX="133.0" layoutY="559.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="133.0" style="-fx-background-color: #11d819;" />
-      <Button fx:id="profileButton" layoutX="267.0" layoutY="559.0" mnemonicParsing="false" onAction="#profileButton" prefHeight="40.0" prefWidth="133.0" style="-fx-background-color: #11d819;" />
-      <ImageView fitHeight="40.0" fitWidth="53.0" layoutX="314.0" layoutY="557.0" onMouseClicked="#profileImage" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="feedButton" layoutY="560.0" mnemonicParsing="false" onAction="#feedButton" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #11d819;" />
+      <Button fx:id="newPostButton" layoutX="201.0" layoutY="559.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="99.0" style="-fx-background-color: #11d819;" />
+      <Button fx:id="profileButton" layoutX="301.0" layoutY="559.0" mnemonicParsing="false" onAction="#profileButton" prefHeight="40.0" prefWidth="99.0" style="-fx-background-color: #11d819;" />
+      <Button fx:id="searchButton" layoutX="101.0" layoutY="559.0" mnemonicParsing="false" onAction="#searchButton" prefHeight="40.0" prefWidth="99.0" style="-fx-background-color: #11d819;" />
+      <ImageView fitHeight="40.0" fitWidth="53.0" layoutX="330.0" layoutY="557.0" onMouseClicked="#profileImage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/profile%202%20icon.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="49.0" layoutY="563.0" onMouseClicked="#feedImage" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="32.0" layoutY="563.0" onMouseClicked="#feedImage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/feed%201%20icon.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="34.0" layoutX="183.0" layoutY="562.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="48.0" fitWidth="34.0" layoutX="134.0" layoutY="563.0" onMouseClicked="#searchImage" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/search%201%20icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="34.0" layoutX="234.0" layoutY="563.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/newpost%202%20icon.png" />
          </image>
       </ImageView>
       <JFXTextArea fx:id="descriptionField" focusColor="#11d819" layoutX="9.0" layoutY="279.0" prefHeight="185.0" prefWidth="379.0" promptText="Description" />
-      <TextField fx:id="titleField" layoutX="9.0" layoutY="224.0" promptText="Title" />
+      <JFXTextField fx:id="titleField" layoutX="9.0" layoutY="224.0" promptText="Title" />
       <JFXButton fx:id="shareButton" buttonType="RAISED" layoutX="133.0" layoutY="487.0" onAction="#share" prefHeight="31.0" prefWidth="133.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Share!" textFill="WHITE" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="118.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="119.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/SBU%20gram%20icon.png" />
          </image>

@@ -1,33 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXCheckBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignupController">
    <children>
-      <TextField fx:id="usernameField" layoutX="99.0" layoutY="357.0" prefHeight="31.0" prefWidth="199.0" promptText="Username" />
-      <PasswordField fx:id="passwordField" layoutX="99.0" layoutY="395.0" prefHeight="31.0" prefWidth="199.0" promptText="Password" />
-      <TextField fx:id="firstNameField" layoutX="99.0" layoutY="165.0" prefHeight="31.0" prefWidth="199.0" promptText="First name" />
-      <TextField fx:id="lastNAmeField" layoutX="99.0" layoutY="203.0" prefHeight="31.0" prefWidth="199.0" promptText="Last name" />
+      <JFXTextField fx:id="usernameField" focusColor="#11d819" layoutX="99.0" layoutY="357.0" prefHeight="31.0" prefWidth="199.0" promptText="Username" />
+      <JFXPasswordField fx:id="passwordField" focusColor="#11d819" layoutX="99.0" layoutY="395.0" prefHeight="31.0" prefWidth="199.0" promptText="Password" />
+      <JFXTextField fx:id="firstNameField" focusColor="#11d819" layoutX="99.0" layoutY="165.0" prefHeight="31.0" prefWidth="199.0" promptText="First name" />
+      <JFXTextField fx:id="lastNAmeField" focusColor="#11d819" layoutX="99.0" layoutY="203.0" prefHeight="31.0" prefWidth="199.0" promptText="Last name" />
       <JFXButton fx:id="signupButton" buttonType="RAISED" layoutX="137.0" layoutY="474.0" onAction="#signUp" prefHeight="31.0" prefWidth="127.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Sign up" textFill="WHITE" />
       <Label layoutX="131.0" layoutY="513.0" text="Already have an account? " />
       <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="135.0" layoutY="530.0" onAction="#login" prefHeight="31.0" prefWidth="127.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Log in" textFill="WHITE" />
-      <TextField fx:id="PhoneNumberField" layoutX="99.0" layoutY="318.0" prefHeight="31.0" prefWidth="199.0" promptText="Phone number" />
+      <JFXTextField fx:id="PhoneNumberField" focusColor="#11d819" layoutX="99.0" layoutY="318.0" prefHeight="31.0" prefWidth="199.0" promptText="Phone number" />
       <JFXCheckBox layoutX="316.0" layoutY="402.0" onAction="#showPass" text="show" />
-      <TextField fx:id="passwordVisible" layoutX="98.0" layoutY="395.0" prefHeight="31.0" prefWidth="199.0" promptText="Password" visible="false" />
+      <JFXTextField fx:id="passwordVisible" focusColor="#11d819" layoutX="98.0" layoutY="395.0" prefHeight="31.0" prefWidth="199.0" promptText="Password" visible="false" />
       <Label fx:id="passwordHint1" layoutX="68.0" layoutY="426.0" text="-Passwords should countain at least 8 characters." />
       <Label fx:id="passwordHint2" layoutX="108.0" layoutY="443.0" text="(A mixture of letters and numbers)" />
-      <TextField fx:id="locationField" layoutX="99.0" layoutY="279.0" prefHeight="31.0" prefWidth="199.0" promptText="Location" />
-      <DatePicker fx:id="birthdatePick" layoutX="98.0" layoutY="241.0" prefHeight="31.0" prefWidth="199.0" promptText="Birthdate" />
+      <JFXTextField fx:id="locationField" focusColor="#11d819" layoutX="99.0" layoutY="279.0" prefHeight="31.0" prefWidth="199.0" promptText="Location" />
+      <DatePicker fx:id="birthdatePick" layoutX="98.0" layoutY="250.0" prefHeight="31.0" prefWidth="199.0" promptText="Birthdate" />
       <JFXButton fx:id="addImageButton" buttonType="RAISED" layoutX="162.0" layoutY="126.0" onAction="#addImage" prefHeight="31.0" prefWidth="75.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Add image" textFill="WHITE" />
       <ImageView fitHeight="98.0" fitWidth="127.0" layoutX="150.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
          <image>
