@@ -98,6 +98,10 @@ public class User {
         this.followings.add(user);
     }
 
+    public void removeFollowings(User user){
+        this.followings.remove(user);
+    }
+
     public ArrayList<User> getFollowers() {
         return followers;
     }
@@ -106,10 +110,23 @@ public class User {
         this.followers.add(user);
     }
 
+    public void removeFollowers(User user){
+        this.followers.remove(user);
+    }
+
     public ArrayList<Post> getPosts() {
         return posts;
     }
+
     public void addPost(Post post){
         this.posts.add(post);
+    }
+
+    public Image getProfile() {
+        return profile;
+    }
+
+    public void setProfile(Image profile) {
+        this.profile = profile;
     }
 }

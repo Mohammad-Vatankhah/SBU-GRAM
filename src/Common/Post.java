@@ -7,6 +7,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class Post {
     private final String writer;
+    private String publisher;
     private String title;
     private String description;
     private ArrayList<User> likes = new ArrayList<>();
@@ -67,5 +68,13 @@ public class Post {
 
     public Map<Date, String> getComments() {
         return comments;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
     }
 }

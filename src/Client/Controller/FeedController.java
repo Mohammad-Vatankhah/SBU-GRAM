@@ -1,6 +1,6 @@
 package Client.Controller;
 
-import Client.Model.PageLoader;
+import Client.Model.*;
 import Common.Post;
 import com.jfoenix.controls.JFXListView;
 import javafx.collections.FXCollections;
