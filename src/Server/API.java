@@ -1,9 +1,9 @@
 package Server;
 
 import Common.Command;
+import Common.Comment;
 import Common.Post;
 import Common.User;
-import javafx.geometry.Pos;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -97,6 +97,58 @@ public class API {
         answer.put("command" , Command.UNFOLLOW);
         Date date = new Date();
         System.out.println("action: unfollow\n" + username + " action\n" + "message: " + target + "\ntime: " + format.format(date));
+        return answer;
+    }
+
+    public static Map<String , Object> like(Map<String , Object> receive){
+        Map<String , Object> answer = new HashMap<>();
+        String username = (String) receive.get("username");
+        String targetUsername = (String) receive.get("targetUsername");
+        Post likedPost = (Post) receive.get("post");
+        User target = Server.users.get(targetUsername);
+        for (Post post:target.getPosts()){
+            if (post.equals(likedPost))
+                post.addLike(Server.users.get(username));
+        }
+        answer.put("answer" , true);
+        answer.put("command" , Command.LIKE);
+        Date date = new Date();
+        System.out.println("action: like\n" + username + "like\n" + "message: " + targetUsername + " " + likedPost.getTitle() + "\ntime: " + format.format(date));
+        return answer;
+    }
+
+    public static Map<String , Object> dislike(Map<String , Object> receive){
+        Map<String , Object> answer = new HashMap<>();
+        String username = (String) receive.get("username");
+        String targetUsername = (String) receive.get("targetUsername");
+        Post dislikedPost = (Post) receive.get("post");
+        User target = Server.users.get(targetUsername);
+        for (Post post:target.getPosts()){
+            if (post.equals(dislikedPost))
+                post.removeLike(Server.users.get(username));
+        }
+        answer.put("answer" , true);
+        answer.put("command" , Command.DISLIKE);
+        Date date = new Date();
+        System.out.println("action: dislike\n" + username + "dislike\n" + "message: " + targetUsername + " " + dislikedPost.getTitle() + "\ntime: " + format.format(date));
+        return answer;
+    }
+
+    public static Map<String , Object> addComment(Map<String , Object> receive){
+        Map<String , Object> answer = new HashMap<>();
+        String username = (String) receive.get("username");
+        String targetUsername = (String) receive.get("targetUsername");
+        Post post = (Post) receive.get("post");
+        Comment comment = (Comment) receive.get("comment");
+        User target = Server.users.get(targetUsername);
+        for (Post post1 : target.getPosts()){
+            if (post1.equals(post))
+                post1.addComment(comment);
+        }
+        answer.put("answer" , true);
+        answer.put("command" , Command.ADD_COMMENT);
+        Date date = new Date();
+        System.out.println(username + " comment\n" + "message: " + post.getTitle() + "\n" + "time: " + format.format(date));
         return answer;
     }
 
