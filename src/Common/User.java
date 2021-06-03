@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class User {
-    private Image profile;
+    private byte[] profile;
     private final String username;
     private String password;
     private String phoneNumber;
@@ -122,11 +122,11 @@ public class User {
         this.posts.add(post);
     }
 
-    public Image getProfile() {
+    public byte[] getProfile() {
         return profile;
     }
 
-    public void setProfile(Image profile) {
+    public void setProfile(byte[] profile) {
         this.profile = profile;
     }
 }

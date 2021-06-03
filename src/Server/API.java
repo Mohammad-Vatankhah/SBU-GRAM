@@ -30,9 +30,10 @@ public class API {
         String password = (String) receive.get("password");
         User user = Server.users.get(username);
         String passwordS = Server.users.get(username).getPassword();
-        if (Server.users.get(username) == null) {
+        if (user == null) {
             answer.put("answer", false);
-        } else {
+        }
+        else if (password.equals(user.getPassword())){
             answer.put("answer", true);
             Date date = new Date();
             System.out.println("action: connect, login\n" + username + "login\ntime: " + format.format(date));
@@ -52,6 +53,10 @@ public class API {
             String lastname = (String) receive.get("lastname");
             String password = (String) receive.get("password");
             User user = new User(name, lastname, username, password);
+            user.setPhoneNumber((String) receive.get("phoneNumber"));
+            user.setBirthdate((String) receive.get("birthdate"));
+            user.setProfile((byte[]) receive.get("profile"));
+            user.setLocation((String) receive.get("location"));
             Server.users.put(username, user);
             answer.put("answer", true);
             Date date = new Date();
