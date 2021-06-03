@@ -60,7 +60,7 @@ public class API {
             Server.users.put(username, user);
             answer.put("answer", true);
             Date date = new Date();
-            System.out.println(username + " register " + user.getProfile().getUrl() + "\ntime: " + format.format(date));
+            System.out.println(username /*+ " register " + user.getProfile().getUrl()*/ + "\ntime: " + format.format(date));
         }
         answer.put("command", Command.SIGNUP);
         return answer;
@@ -210,9 +210,10 @@ public class API {
         answer.put("followers" , user.getFollowers().size());
         answer.put("followings" , user.getFollowings());
         answer.put("posts" , user.getPosts());
+        answer.put("profile" , user.getProfile());
         answer.put("command" , Command.GET_INFO);
         Date date = new Date();
-        System.out.println(username + " get info " + target + "\nmessage: " + target + user.getProfile().getUrl() + "\ntime: " + format.format(date));
+        System.out.println(username + " get info " + target + "\nmessage: " /*+ target + user.getProfile().getUrl()*/ + "\ntime: " + format.format(date));
         return answer;
     }
 
@@ -223,6 +224,14 @@ public class API {
         answer.put("command" , Command.LOGOUT);
         Date date = new Date();
         System.out.println(username + " logout\ntime: " + format.format(date));
+        return answer;
+    }
+
+    public static Map<String , Object> getPassword(Map<String , Object> receive){
+        Map<String , Object> answer = new HashMap<>();
+        String username = (String) receive.get("username");
+        answer.put("answer" , Server.users.get(username).getPassword());
+        answer.put("command" , Command.GET_PASSWORD);
         return answer;
     }
 }

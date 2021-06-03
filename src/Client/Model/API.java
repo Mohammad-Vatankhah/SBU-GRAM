@@ -4,6 +4,7 @@ import Common.Command;
 import Common.Comment;
 import Common.Post;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -105,5 +106,66 @@ public class API {
         send.put("comment" , comment);
         receive = ClientOnline.send(send);
         return (boolean) receive.get("answer");
+    }
+
+    public static ArrayList<Post> getPosts(String username){
+        Map<String,Object> send = new HashMap<>();
+        Map<String,Object> receive;
+        send.put("command" , Command.GET_POSTS);
+        send.put("username" , username);
+        receive = ClientOnline.send(send);
+        return (ArrayList<Post>) receive.get("answer");
+    }
+
+    public static boolean updateProfile(String username , String newName , String newBirthdate , String newLastname , String newLocation , String newPhoneNumber){
+        Map<String,Object> send = new HashMap<>();
+        Map<String,Object> receive;
+        send.put("command" , Command.UPDATE_PROFILE);
+        send.put("username" , username);
+        send.put("newName" , newName);
+        send.put("newBirthdate" , newBirthdate);
+        send.put("newLastname" , newLastname);
+        send.put("newLocation" , newLocation);
+        send.put("newPhoneNumber" , newPhoneNumber);
+        receive = ClientOnline.send(send);
+        return (boolean) receive.get("answer");
+    }
+
+    public static boolean repost(String username , Post post){
+        Map<String,Object> send = new HashMap<>();
+        Map<String,Object> receive;
+        send.put("command" , Command.REPOST);
+        send.put("username" , username);
+        send.put("post" , post);
+        receive = ClientOnline.send(send);
+        return (boolean) receive.get("answer");
+    }
+
+    public static Map<String , Object> getInfo(String username , String target){
+        Map<String,Object> send = new HashMap<>();
+        Map<String,Object> receive;
+        send.put("command" ,Command.GET_INFO);
+        send.put("username" , username);
+        send.put("targetUsername" , target);
+        receive = ClientOnline.send(send);
+        return receive;
+    }
+
+    public static boolean logout(String username){
+        Map<String,Object> send = new HashMap<>();
+        Map<String,Object> receive;
+        send.put("command" , Command.LOGOUT);
+        send.put("username" , username);
+        receive = ClientOnline.send(send);
+        return (boolean) receive.get("answer");
+    }
+
+    public static String getPassword(String username){
+        Map<String,Object> send = new HashMap<>();
+        Map<String,Object> receive;
+        send.put("command" , Command.GET_PASSWORD);
+        send.put("username" , username);
+        receive = ClientOnline.send(send);
+        return (String) receive.get("answer");
     }
 }
