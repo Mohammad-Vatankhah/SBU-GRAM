@@ -3,6 +3,7 @@ package Common;
 import javafx.scene.image.Image;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class User {
     private Image profile;
@@ -22,6 +23,19 @@ public class User {
         this.password = password;
         this.name = name;
         this.lastName = lastName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(profile, user.profile) && username.equals(user.username) && password.equals(user.password) && Objects.equals(phoneNumber, user.phoneNumber) && Objects.equals(name, user.name) && Objects.equals(lastName, user.lastName) && Objects.equals(birthdate, user.birthdate) && Objects.equals(location, user.location) && Objects.equals(followings, user.followings) && Objects.equals(followers, user.followers) && Objects.equals(posts, user.posts);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(profile, username, password, phoneNumber, name, lastName, birthdate, location, followings, followers, posts);
     }
 
     public String getUsername() {

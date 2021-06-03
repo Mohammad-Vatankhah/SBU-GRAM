@@ -1,0 +1,8 @@
+package Common;
+
+public enum Command {
+    LOGIN , SIGNUP , LOGOUT , USERNAME_UNIQUE ,
+    ADD_COMMENT , LIKE , REPOST , UPDATE_PROFILE ,
+    GET_POSTS , FOLLOW , UNFOLLOW , PUBLISH_POST ,
+    GET_INFO
+}

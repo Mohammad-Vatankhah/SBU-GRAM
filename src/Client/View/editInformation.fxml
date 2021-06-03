@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.EditInformationController">
+   <children>
+      <JFXTextField fx:id="firstNameField" focusColor="#11d819" layoutX="101.0" layoutY="226.0" prefHeight="31.0" prefWidth="199.0" promptText="First name" />
+      <JFXTextField fx:id="lastNAmeField" focusColor="#11d819" layoutX="101.0" layoutY="278.0" prefHeight="31.0" prefWidth="199.0" promptText="Last name" />
+      <DatePicker fx:id="birthdatePick" layoutX="101.0" layoutY="331.0" prefHeight="31.0" prefWidth="199.0" promptText="Birthdate" />
+      <JFXTextField fx:id="locationField" focusColor="#11d819" layoutX="101.0" layoutY="375.0" prefHeight="31.0" prefWidth="199.0" promptText="Location" />
+      <JFXTextField fx:id="PhoneNumberField" focusColor="#11d819" layoutX="101.0" layoutY="428.0" prefHeight="31.0" prefWidth="199.0" promptText="Phone number" />
+      <ImageView fitHeight="19.0" fitWidth="23.0" layoutX="5.0" layoutY="4.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/back%20icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="175.0" fitWidth="200.0" layoutX="105.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/SBU gram icon.png" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="101.0" layoutY="512.0" onAction="#change" prefHeight="31.0" prefWidth="199.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Change" textFill="WHITE" />
+      <Label layoutX="307.0" layoutY="233.0" prefHeight="17.0" prefWidth="10.0" text="*" textFill="RED" />
+      <Label layoutX="307.0" layoutY="285.0" prefHeight="17.0" prefWidth="10.0" text="*" textFill="RED" />
+      <Label fx:id="emptyFields" layoutX="113.0" layoutY="479.0" text="please fill the fields which have *." textFill="RED" visible="false" />
+   </children>
+</Pane>

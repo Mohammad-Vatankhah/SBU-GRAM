@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="username" layoutX="108.0" layoutY="45.0" text="Username">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Circle fx:id="profile" fill="DODGERBLUE" layoutX="51.0" layoutY="57.0" radius="47.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label fx:id="title" layoutX="185.0" layoutY="104.0" text="Title">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="245.0" layoutY="45.0" text="Writer:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="writer" layoutX="296.0" layoutY="47.0" text="writer">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="46.0" fitWidth="53.0" layoutX="12.0" layoutY="260.0" onMouseClicked="#likeImage" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/like%201%20icon.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="likes" layoutX="23.0" layoutY="306.0" text="likes" />
+      <ImageView fitHeight="46.0" fitWidth="46.0" layoutX="98.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/repost%20icon.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="103.0" layoutY="298.0" prefHeight="17.0" prefWidth="37.0" text="Repost" />
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="245.0" layoutY="268.0" onMouseClicked="#addComment" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/add%20comment%20icon.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="226.0" layoutY="306.0" text="Add comment" />
+      <ImageView fitHeight="37.0" fitWidth="46.0" layoutX="338.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/view%20comment%20icon.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="314.0" layoutY="306.0" text="Client.View comments" />
+      <ImageView fx:id="greenLike" fitHeight="46.0" fitWidth="84.0" layoutX="12.0" layoutY="260.0" onMouseClicked="#disLike" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/like%202%20icon.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="104.0" layoutY="313.0" text="repost" />
+   </children>
+</Pane>
