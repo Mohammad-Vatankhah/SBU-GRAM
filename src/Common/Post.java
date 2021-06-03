@@ -9,7 +9,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Post {
     private final String writer;
-    private String publisher;
+    private User publisher;
     private String title;
     private String description;
     private ArrayList<User> likes = new ArrayList<>();
@@ -89,11 +89,11 @@ public class Post {
         return comments;
     }
 
-    public String getPublisher() {
+    public User getPublisher() {
         return publisher;
     }
 
-    public void setPublisher(String publisher) {
+    public void setPublisher(User publisher) {
         this.publisher = publisher;
     }
 }
