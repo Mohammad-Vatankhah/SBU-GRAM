@@ -2,11 +2,13 @@ package Common;
 
 import javafx.scene.image.Image;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class User {
+public class User implements Serializable {
     private byte[] profile;
+    private String profileAddress;
     private final String username;
     private String password;
     private String phoneNumber;
@@ -128,5 +130,13 @@ public class User {
 
     public void setProfile(byte[] profile) {
         this.profile = profile;
+    }
+
+    public void setProfileAddress(String profileAddress) {
+        this.profileAddress = profileAddress;
+    }
+
+    public String getProfileAddress() {
+        return profileAddress;
     }
 }

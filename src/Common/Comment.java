@@ -1,8 +1,9 @@
 package Common;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Comment {
+public class Comment implements Serializable {
     String comment;
     Date date;
     User user;

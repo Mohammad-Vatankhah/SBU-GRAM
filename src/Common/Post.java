@@ -1,5 +1,6 @@
 package Common;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
@@ -7,7 +8,7 @@ import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class Post {
+public class Post implements Serializable {
     private final String writer;
     private User publisher;
     private String title;

@@ -59,7 +59,7 @@ public class API {
             Server.users.put(username, user);
             answer.put("answer", true);
             Date date = new Date();
-            System.out.println(username /*+ " register " + user.getProfile().getUrl()*/ + "\ntime: " + format.format(date));
+            System.out.println(username + " register " + user.getProfileAddress() + "\ntime: " + format.format(date));
         }
         answer.put("command", Command.SIGNUP);
         return answer;
@@ -212,7 +212,7 @@ public class API {
         answer.put("profile" , user.getProfile());
         answer.put("command" , Command.GET_INFO);
         Date date = new Date();
-        System.out.println(username + " get info " + target + "\nmessage: " /*+ target + user.getProfile().getUrl()*/ + "\ntime: " + format.format(date));
+        System.out.println(username + " get info " + target + "\nmessage: " + target + user.getProfileAddress() + "\ntime: " + format.format(date));
         return answer;
     }
 
