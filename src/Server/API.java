@@ -29,8 +29,7 @@ public class API {
         String username = (String) receive.get("username");
         String password = (String) receive.get("password");
         User user = Server.users.get(username);
-        String passwordS = Server.users.get(username).getPassword();
-        if (user == null) {
+        if (user == null || !password.equals(user.getPassword())) {
             answer.put("answer", false);
         }
         else if (password.equals(user.getPassword())){

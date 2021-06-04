@@ -33,9 +33,66 @@ public class ClientHandler implements Runnable{
                 receive = (Map<String, Object>) socketIn.readObject();
                 Map<String , Object> answer = null;
                 Command command = (Command) receive.get("command");
+                switch (command){
+                    case USERNAME_UNIQUE:
+                        answer = API.isUsernameExist(receive);
+                        break;
+                    case LOGIN:
+                        answer = API.login(receive);
+                        break;
+                    case SIGNUP:
+                        answer = API.signup(receive);
+                        break;
+                    case PUBLISH_POST:
+                        answer = API.publishPost(receive);
+                        break;
+                    case FOLLOW:
+                        answer = API.follow(receive);
+                        break;
+                    case UNFOLLOW:
+                        answer = API.unfollow(receive);
+                        break;
+                    case LIKE:
+                        answer = API.like(receive);
+                        break;
+                    case DISLIKE:
+                        answer = API.dislike(receive);
+                        break;
+                    case ADD_COMMENT:
+                        answer = API.addComment(receive);
+                        break;
+                    case GET_POSTS:
+                        answer = API.getPosts(receive);
+                        break;
+                    case UPDATE_PROFILE:
+                        answer = API.updateProfile(receive);
+                        break;
+                    case REPOST:
+                        answer = API.repost(receive);
+                        break;
+                    case GET_INFO:
+                        answer = API.getInfo(receive);
+                        break;
+                    case LOGOUT:
+                        answer = API.logout(receive);
+                        break;
+                    case GET_PASSWORD:
+                        answer = API.getPassword(receive);
+                        break;
+                }
+                socketOut.writeObject(answer);
+                socketOut.flush();
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
             }
         }
+        try {
+            socketOut.close();
+            socketIn.close();
+            userSocket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
