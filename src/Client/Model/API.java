@@ -18,14 +18,14 @@ public class API {
         return (boolean) receive.get("answer");
     }
 
-    public static boolean login(String username , String password){
+    public static Map<String , Object> login(String username , String password){
         Map<String,Object> send = new HashMap<>();
         Map<String,Object> receive;
         send.put("command" , Command.LOGIN);
         send.put("username" , username);
         send.put("password" , password);
         receive = ClientOnline.send(send);
-        return (boolean) receive.get("answer");
+        return receive;
     }
 
     public static boolean signup(String username , String password , String name , String lastname , String location , String phoneNumber , String birthdate , byte[] profile){

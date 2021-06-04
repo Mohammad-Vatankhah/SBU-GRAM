@@ -1,6 +1,6 @@
 package Client.Controller;
 
-import Client.Model.PageLoader;
+import Client.Model.*;
 import javafx.event.ActionEvent;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;

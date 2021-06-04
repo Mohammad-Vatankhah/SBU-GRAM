@@ -34,6 +34,7 @@ public class API {
         }
         else if (password.equals(user.getPassword())){
             answer.put("answer", true);
+            answer.put("user" , user);
             Date date = new Date();
             System.out.println("action: connect, login\n" + username + "login\ntime: " + format.format(date));
         }

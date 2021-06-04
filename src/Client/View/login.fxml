@@ -21,7 +21,7 @@
             </ImageView>
             <JFXButton fx:id="signupButton" buttonType="RAISED" layoutX="107.0" layoutY="374.0" onAction="#signUp" prefHeight="31.0" prefWidth="127.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Sign up" textFill="WHITE" />
             <Label layoutX="107.0" layoutY="357.0" text="Don't  have an account?" />
-            <Label fx:id="wrongPasswordLabel" layoutX="124.0" layoutY="275.0" text="Wrong password!" textFill="#d70000" visible="false" />
+            <Label fx:id="wrongPasswordLabel" layoutX="124.0" layoutY="275.0" text="Wrong password or username!" textFill="#d70000" visible="false" />
             <JFXCheckBox layoutX="275.0" layoutY="254.0" onAction="#showPass" prefHeight="0.0" prefWidth="0.0" text="show" />
             <JFXTextField fx:id="passwordVisible" focusColor="#11d819" layoutX="67.0" layoutY="250.0" prefHeight="25.0" prefWidth="208.0" promptText="Password" visible="false" />
          </children>

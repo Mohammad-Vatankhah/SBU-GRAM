@@ -1,6 +1,6 @@
 package Client.Controller;
 
-import Client.Model.PageLoader;
+import Client.Model.*;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;

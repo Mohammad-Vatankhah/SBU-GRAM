@@ -1,7 +1,7 @@
 package Client.Controller;
 
 import Common.Post;
-import Client.Model.PageLoader;
+import Client.Model.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
