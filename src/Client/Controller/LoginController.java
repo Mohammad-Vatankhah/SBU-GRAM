@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.Map;
 
 public class LoginController {
-    User currentUser;
+    public User currentUser;
     @FXML
     public JFXPasswordField passwordField;
     public JFXButton loginButton;
