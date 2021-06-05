@@ -10,17 +10,18 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class SignupController {
+    public byte[] userProfile;
     public TextField usernameField;
     public JFXPasswordField passwordField;
     public JFXTextField firstNameField;
@@ -32,12 +33,19 @@ public class SignupController {
     public JFXTextField locationField;
     public DatePicker birthdatePick;
     public JFXButton addImageButton;
-    public ImageView profilePhoto;
     public Label passwordRegexError;
     public Label passwordHint1;
     public Label passwordHint2;
     public Label emptyFields;
     public Circle circleProfile;
+
+    {
+        try {
+            userProfile = new FileInputStream("F:\\SBU\\exc\\AP\\SBU_gram\\images").readAllBytes();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     public void signUp(ActionEvent actionEvent) {
@@ -59,30 +67,35 @@ public class SignupController {
         }
 
         if (passwordField.isVisible()) {
-            if (passwordField.getText().matches(regex)) {
                 password = passwordField.getText();
-                passwordRegexError.setVisible(false);
-            }
-            else{
-                passwordRegexError.setVisible(true);
-                passwordHint1.setVisible(false);
-                passwordHint2.setVisible(false);
-            }
         }
 
-        else if (passwordVisible.isVisible()) {
-            if (passwordVisible.getText().matches(regex)) {
+        else {
                 password = passwordVisible.getText();
-                passwordRegexError.setVisible(false);
-            }
-
-            else{
-                passwordRegexError.setVisible(true);
-                passwordHint1.setVisible(false);
-                passwordHint2.setVisible(false);
-            }
         }
 
+        if (!password.matches(regex)){
+            passwordRegexError.setText("-your password does not meet the requirements.");
+            passwordRegexError.setVisible(true);
+            passwordHint1.setVisible(false);
+            passwordHint2.setVisible(false);
+        } else passwordRegexError.setVisible(false);
+
+        boolean usernameUnique = API.isUsernameExist(username);
+
+        if (usernameUnique){
+            passwordRegexError.setText("-Username already picked.");
+            passwordRegexError.setVisible(true);
+        }
+
+        if (!usernameField.getText().equals("") && !firstNameField.getText().equals("") && !lastNAmeField.getText().equals("") && password.matches(regex) && !usernameUnique){
+            API.signup(username , password , name , lastName , location , phone , birthdate , userProfile);
+            try {
+                new PageLoader().load("feed" , 414 , 637);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void login(ActionEvent actionEvent){
@@ -119,6 +132,11 @@ public class SignupController {
         File selectedFile = fileChooser.showOpenDialog(null);
         if (selectedFile != null){
             Image image = new Image(selectedFile.toURI().toString());
+            try {
+                userProfile = new FileInputStream(selectedFile).readAllBytes();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             circleProfile.setStroke(Color.SEAGREEN);
             circleProfile.setFill(new ImagePattern(image));
             circleProfile.setEffect(new DropShadow(+25d , 0d , +2d , Color.DARKSEAGREEN));
