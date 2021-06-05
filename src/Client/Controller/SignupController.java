@@ -41,7 +41,7 @@ public class SignupController {
 
     {
         try {
-            userProfile = new FileInputStream("F:\\SBU\\exc\\AP\\SBU_gram\\images").readAllBytes();
+            userProfile = new FileInputStream("F:\\SBU\\exc\\AP\\SBU_gram\\images\\user.png").readAllBytes();
         } catch (IOException e) {
             e.printStackTrace();
         }

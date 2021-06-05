@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class DataBase {
-    public static final String USERS_FILE = "F:\\SBU\\exc\\AP\\SBU_gram\\db\\Users";
+    public static final String USERS_FILE = "F:\\SBU\\exc\\AP\\SBU_gram\\db\\Users.bin";
 
     private static final DataBase instance = new DataBase();
 
@@ -17,13 +17,24 @@ public class DataBase {
     private DataBase(){}
 
     public synchronized void initializeServer() {
+        File file = new File(USERS_FILE);
+        if (!file.exists()){
             try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
                 FileInputStream fileIn = new FileInputStream(USERS_FILE);
                 ObjectInputStream ois = new ObjectInputStream(fileIn);
                 Server.users = new ConcurrentHashMap<>((ConcurrentHashMap<String, User>) ois.readObject());
                 fileIn.close();
                 ois.close();
-            } catch(IOException | ClassNotFoundException e){
+            }catch (EOFException | StreamCorruptedException e){
+            Server.users = new ConcurrentHashMap<>();
+        }
+        catch(IOException | ClassNotFoundException e){
                 e.printStackTrace();
             }
         }
