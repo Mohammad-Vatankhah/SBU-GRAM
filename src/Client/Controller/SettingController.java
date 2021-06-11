@@ -2,6 +2,7 @@ package Client.Controller;
 
 import Client.Model.*;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
@@ -10,12 +11,22 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class SettingController {
+    public String currentUser = LoginController.currentUser;
     public Circle circleProfile;
+
+    @FXML
+    public void initialize() {
+        circleProfile.setStroke(Color.SEAGREEN);
+        circleProfile.setFill(new ImagePattern(new Image(new ByteArrayInputStream(API.getUser(currentUser).getProfile()))));
+        circleProfile.setEffect(new DropShadow(+25d, 0d, +2d, Color.DARKSEAGREEN));
+        circleProfile.setVisible(true);
+    }
 
     public void logout(ActionEvent actionEvent){
         try {

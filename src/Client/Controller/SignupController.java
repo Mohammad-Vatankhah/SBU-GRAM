@@ -92,7 +92,7 @@ public class SignupController {
 
         if (!usernameField.getText().equals("") && !firstNameField.getText().equals("") && !lastNAmeField.getText().equals("") && password.matches(regex) && !usernameUnique){
             API.signup(username , password , name , lastName , location , phone , birthdate , userProfile , profileAddress);
-            LoginController.currentUser = API.getUser(username);
+            LoginController.currentUser = username;
             try {
                 new PageLoader().load("feed" , 414 , 637);
             } catch (IOException e) {

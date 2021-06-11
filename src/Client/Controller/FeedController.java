@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class FeedController {
 
-    public static User currentUser = LoginController.currentUser;
+    public static String currentUsername = LoginController.currentUser;
     public Button newPostButton;
     public Button profileButton;
     public Button feedButton;
@@ -24,6 +24,7 @@ public class FeedController {
 
     @FXML
     public void initialize(){
+        User currentUser = API.getUser(currentUsername);
         for (User user:currentUser.getFollowings()){
             posts.addAll(user.getPosts());
         }

@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.Map;
 
 public class LoginController {
-    public static User currentUser;
+    public static String currentUser;
     @FXML
     public JFXPasswordField passwordField;
     public JFXButton loginButton;
@@ -32,7 +32,7 @@ public class LoginController {
          Map<String , Object> answer = API.login(username , password);
         if ((boolean)answer.get("answer")){
             try {
-                currentUser = (User) answer.get("user");
+                currentUser = username;
                 new PageLoader().load("feed" , 414 , 637);
             } catch (IOException e) {
                 e.printStackTrace();

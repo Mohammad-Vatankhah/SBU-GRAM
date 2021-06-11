@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.Objects;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class Post implements Serializable {
+public class Post implements Serializable , Comparable {
     private final String writer;
     private User publisher;
     private String title;
@@ -103,5 +103,10 @@ public class Post implements Serializable {
 
     public void setImage(byte[] image) {
         this.image = image;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }

@@ -18,7 +18,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 public class PostItemController {
-    public User currentUser = LoginController.currentUser;
+    public String currentUser = LoginController.currentUser;
     public Label username;
     public Label title;
     public Label writer;
@@ -57,7 +57,7 @@ public class PostItemController {
     }
 
     public void disLike(MouseEvent mouseEvent) {
-        API.dislike(currentUser.getUsername() , post.getPublisher().getUsername() , post);
+        API.dislike(currentUser , post.getPublisher().getUsername() , post);
         greenLike.setVisible(false);
         whiteLike.setVisible(true);
     }
@@ -66,7 +66,7 @@ public class PostItemController {
     }
 
     public void likeImage(MouseEvent mouseEvent) {
-        API.like(currentUser.getUsername() , post.getPublisher().getUsername() , post);
+        API.like(currentUser , post.getPublisher().getUsername() , post);
         greenLike.setVisible(true);
         whiteLike.setVisible(false);
     }
