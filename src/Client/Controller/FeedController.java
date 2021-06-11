@@ -12,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class FeedController {
 
@@ -19,7 +20,7 @@ public class FeedController {
     public Button newPostButton;
     public Button profileButton;
     public Button feedButton;
-    public JFXListView PostList;
+    public JFXListView<Post> PostList;
     ArrayList<Post> posts = new ArrayList<>();
 
     @FXML
@@ -29,6 +30,7 @@ public class FeedController {
             posts.addAll(user.getPosts());
         }
         posts.addAll(currentUser.getPosts());
+        Collections.sort(posts);
         PostList.setItems(FXCollections.observableArrayList(posts));
         PostList.setCellFactory(postList -> new PostItem());
     }

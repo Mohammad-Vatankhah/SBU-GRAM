@@ -36,10 +36,9 @@ public class API {
             answer.put("answer", true);
             answer.put("user" , user);
             Date date = new Date();
-            System.out.println("action: connect, login\n" + username + "login\ntime: " + format.format(date));
+            System.out.println("action: connect, login\n" + username + " login\ntime: " + format.format(date));
         }
         answer.put("command", Command.LOGIN);
-
         return answer;
     }
 
@@ -76,6 +75,7 @@ public class API {
         answer.put("command", Command.PUBLISH_POST);
         Date date = new Date();
         System.out.println(username + " publish\n" + "message: " + post.getTitle() + " " + post.getPublisher().getUsername() + "\ntime: " + format.format(date));
+        Server.dataBase.updateDataBase();
         return answer;
     }
 
@@ -89,6 +89,7 @@ public class API {
         answer.put("command", Command.FOLLOW);
         Date date = new Date();
         System.out.println("action: follow\n" + username + " action\n" + "message: " + target + "\ntime: " + format.format(date));
+        Server.dataBase.updateDataBase();
         return answer;
     }
 
@@ -102,6 +103,7 @@ public class API {
         answer.put("command", Command.UNFOLLOW);
         Date date = new Date();
         System.out.println("action: unfollow\n" + username + " action\n" + "message: " + target + "\ntime: " + format.format(date));
+        Server.dataBase.updateDataBase();
         return answer;
     }
 
@@ -119,6 +121,7 @@ public class API {
         answer.put("command", Command.LIKE);
         Date date = new Date();
         System.out.println("action: like\n" + username + "like\n" + "message: " + targetUsername + " " + likedPost.getTitle() + "\ntime: " + format.format(date));
+        Server.dataBase.updateDataBase();
         return answer;
     }
 
@@ -136,6 +139,7 @@ public class API {
         answer.put("command", Command.DISLIKE);
         Date date = new Date();
         System.out.println("action: dislike\n" + username + "dislike\n" + "message: " + targetUsername + " " + dislikedPost.getTitle() + "\ntime: " + format.format(date));
+        Server.dataBase.updateDataBase();
         return answer;
     }
 
@@ -154,6 +158,7 @@ public class API {
         answer.put("command", Command.ADD_COMMENT);
         Date date = new Date();
         System.out.println(username + " comment\n" + "message: " + post.getTitle() + "\ntime: " + format.format(date));
+        Server.dataBase.updateDataBase();
         return answer;
     }
 
@@ -165,6 +170,7 @@ public class API {
         answer.put("command" , Command.GET_POSTS);
         Date date = new Date();
         System.out.println(username + " get posts list\ntime: " + format.format(date));
+        Server.dataBase.updateDataBase();
         return answer;
     }
 
@@ -181,6 +187,7 @@ public class API {
         answer.put("command" , Command.UPDATE_PROFILE);
         Date date = new Date();
         System.out.println(username + " update info\ntime: " + format.format(date));
+        Server.dataBase.updateDataBase();
         return answer;
     }
 
@@ -195,6 +202,7 @@ public class API {
         answer.put("command" , Command.REPOST);
         Date date = new Date();
         System.out.println("action: repost\n" + username + " repost\n" + "message: " + post.getWriter() + " " + post.getTitle() + "\ntime: " + format.format(date));
+        Server.dataBase.updateDataBase();
         return answer;
     }
 
@@ -215,6 +223,7 @@ public class API {
         answer.put("command" , Command.GET_INFO);
         Date date = new Date();
         System.out.println(username + " get info " + target + "\nmessage: " + target + user.getProfileAddress() + "\ntime: " + format.format(date));
+        Server.dataBase.updateDataBase();
         return answer;
     }
 

@@ -8,6 +8,7 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
@@ -27,7 +28,7 @@ public class PostItemController {
     public Rectangle imageBox;
     public Label reposts;
     public Circle profileImage;
-    public Pane root;
+    public AnchorPane root;
     public ImageView whiteLike;
     Post post;
 
@@ -36,7 +37,7 @@ public class PostItemController {
         this.post = post;
     }
 
-    public Pane init(){
+    public AnchorPane init(){
         writer.setText(post.getWriter());
         title.setText(post.getTitle());
         reposts.setText(String.valueOf(post.getReposts()));

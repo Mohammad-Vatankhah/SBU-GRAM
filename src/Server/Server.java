@@ -10,6 +10,7 @@ import java.util.Map;
 public class Server {
     public static final int PORT = 2222;
     private static boolean isServerUp = true;
+    public static DataBase dataBase = DataBase.getInstance();
 
     public static Map<String , User> users = null;
 
@@ -18,7 +19,8 @@ public class Server {
     }
 
     public static void main(String[] args) {
-        DataBase.getInstance().initializeServer();
+        dataBase.initializeServer();
+
         ServerSocket serverSocket = null;
 
         try {

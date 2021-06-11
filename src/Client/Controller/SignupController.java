@@ -39,6 +39,7 @@ public class SignupController {
     public Label passwordHint2;
     public Label emptyFields;
     public Circle circleProfile;
+    public Label usernameExistError;
 
     {
         try {
@@ -86,8 +87,7 @@ public class SignupController {
         boolean usernameUnique = API.isUsernameExist(username);
 
         if (usernameUnique){
-            passwordRegexError.setText("-Username already picked.");
-            passwordRegexError.setVisible(true);
+            usernameExistError.setVisible(true);
         }
 
         if (!usernameField.getText().equals("") && !firstNameField.getText().equals("") && !lastNAmeField.getText().equals("") && password.matches(regex) && !usernameUnique){

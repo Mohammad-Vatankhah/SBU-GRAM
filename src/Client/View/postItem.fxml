@@ -8,7 +8,8 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.PostItemController">
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.PostItemController">
    <children>
       <Label fx:id="username" layoutX="35.0" layoutY="45.0" onMouseClicked="#publisherID" text="Username">
          <font>
@@ -57,4 +58,4 @@
       <Label layoutX="6.0" layoutY="319.0" prefHeight="104.0" prefWidth="389.0" text="Description" />
       <Rectangle fx:id="imageBox" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" layoutX="45.0" layoutY="117.0" stroke="BLACK" strokeType="INSIDE" width="311.0" />
    </children>
-</Pane>
+</AnchorPane>

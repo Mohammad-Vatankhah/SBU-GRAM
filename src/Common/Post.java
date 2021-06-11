@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.Objects;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class Post implements Serializable , Comparable {
+public class Post implements Serializable , Comparable<Post> {
     private final String writer;
     private User publisher;
     private String title;
@@ -106,7 +106,7 @@ public class Post implements Serializable , Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public int compareTo(Post post) {
+        return post.date.compareTo(this.date);
     }
 }

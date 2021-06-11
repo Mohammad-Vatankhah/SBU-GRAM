@@ -13,7 +13,7 @@
       <JFXPasswordField fx:id="passwordField" focusColor="#11d819" layoutX="99.0" layoutY="395.0" prefHeight="31.0" prefWidth="199.0" promptText="Password" />
       <JFXTextField fx:id="firstNameField" focusColor="#11d819" layoutX="99.0" layoutY="165.0" prefHeight="31.0" prefWidth="199.0" promptText="First name" />
       <JFXTextField fx:id="lastNAmeField" focusColor="#11d819" layoutX="99.0" layoutY="203.0" prefHeight="31.0" prefWidth="199.0" promptText="Last name" />
-      <JFXButton fx:id="signupButton" buttonType="RAISED" layoutX="137.0" layoutY="474.0" onAction="#signUp" prefHeight="31.0" prefWidth="127.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Sign up" textFill="WHITE" />
+      <JFXButton fx:id="signupButton" buttonType="RAISED" layoutX="137.0" layoutY="480.0" onAction="#signUp" prefHeight="31.0" prefWidth="127.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Sign up" textFill="WHITE" />
       <Label layoutX="131.0" layoutY="513.0" text="Already have an account? " />
       <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="135.0" layoutY="530.0" onAction="#login" prefHeight="31.0" prefWidth="127.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Log in" textFill="WHITE" />
       <JFXTextField fx:id="PhoneNumberField" focusColor="#11d819" layoutX="99.0" layoutY="318.0" prefHeight="31.0" prefWidth="199.0" promptText="Phone number" />
@@ -30,6 +30,7 @@
          </image>
       </ImageView>
       <Label fx:id="passwordRegexError" layoutX="74.0" layoutY="450.0" text="-your password does not meet the requirements." textFill="RED" visible="false" />
+      <Label fx:id="usernameExistError" layoutX="129.0" layoutY="463.0" text="-Username already picked." textFill="RED" visible="false" />
       <Label layoutX="305.0" layoutY="168.0" text="*" textFill="RED">
          <font>
             <Font size="16.0" />
