@@ -74,7 +74,7 @@ public class API {
         answer.put("answer", true);
         answer.put("command", Command.PUBLISH_POST);
         Date date = new Date();
-        System.out.println(username + " publish\n" + "message: " + post.getTitle() + " " + post.getPublisher() + "\ntime: " + format.format(date));
+        System.out.println(username + " publish\n" + "message: " + post.getTitle() + " " + post.getPublisher().getUsername() + "\ntime: " + format.format(date));
         return answer;
     }
 

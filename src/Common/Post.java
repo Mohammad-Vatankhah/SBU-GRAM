@@ -10,13 +10,15 @@ public class Post implements Serializable {
     private User publisher;
     private String title;
     private String description;
+    private byte[] image;
     private CopyOnWriteArrayList<String> likes = new CopyOnWriteArrayList<>();
     private int reposts = 0;
     private final Date date;
     private CopyOnWriteArrayList<Comment> comments = new CopyOnWriteArrayList<>();
 
-    public Post(String writer, String title, String description , Date date) {
+    public Post(String writer, User publisher , String title, String description , Date date) {
         this.writer = writer;
+        this.publisher = publisher;
         this.title = title;
         this.description = description;
         this.date = date;
@@ -93,5 +95,13 @@ public class Post implements Serializable {
 
     public void setPublisher(User publisher) {
         this.publisher = publisher;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 }

@@ -1,25 +1,59 @@
 package Client.Controller;
 
 import Client.Model.*;
+import Common.Post;
+import Common.User;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.FileChooser;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
 
 public class NewPostController {
+    public byte[] postImage = null;
+    public static User currentUser = LoginController.currentUser;
     public Button newPostButton;
     public Button profileButton;
     public JFXTextArea descriptionField;
-    public JFXTextField titleField;
+    public TextField titleField;
     public JFXButton shareButton;
     public Button feedButton;
     public Button searchButton;
+    public JFXButton addImageButton;
+    public Rectangle imageBox;
+    public Label fieldError;
+    public Label imageError;
 
     public void share(ActionEvent actionEvent) {
+        if (titleField.getText().equals("") || descriptionField.getText().equals("") || imageBox == null) {
+            fieldError.setVisible(titleField.getText().equals("") || descriptionField.getText().equals(""));
+            imageError.setVisible(imageBox == null);
+        }
+        else {
+            Post post = new Post(currentUser.getUsername(), currentUser, titleField.getText(), descriptionField.getText(), new Date());
+            post.setImage(postImage);
+            API.publishPost(currentUser.getUsername(), post);
+            try {
+                new PageLoader().load("feed", 414, 637);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void feedButton(ActionEvent actionEvent){
@@ -67,6 +101,31 @@ public class NewPostController {
             new PageLoader().load("search" , 414 , 637);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void addImage(ActionEvent actionEvent) {
+        FileChooser fileChooser = new FileChooser();
+        ArrayList<String> imageFormats = new ArrayList<>();
+        imageFormats.add("*.jpeg");
+        imageFormats.add("*.JPEG");
+        imageFormats.add("*.png");
+        imageFormats.add("*.PNG");
+        imageFormats.add("*.jpg");
+        imageFormats.add("*.JPG");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("images", imageFormats));
+        File selectedFile = fileChooser.showOpenDialog(null);
+        if (selectedFile != null){
+            Image image = new Image(selectedFile.toURI().toString());
+            try {
+                postImage = new FileInputStream(selectedFile).readAllBytes();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            imageBox.setStroke(Color.SEAGREEN);
+            imageBox.setFill(new ImagePattern(image));
+            imageBox.setEffect(new DropShadow(+25d , 0d , +2d , Color.DARKSEAGREEN));
+            imageBox.setVisible(true);
         }
     }
 }

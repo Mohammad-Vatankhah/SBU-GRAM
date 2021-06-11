@@ -2,6 +2,7 @@ package Client.Controller;
 
 import Client.Model.*;
 import Common.Post;
+import Common.User;
 import com.jfoenix.controls.JFXListView;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -14,17 +15,21 @@ import java.util.ArrayList;
 
 public class FeedController {
 
-
+    public static User currentUser = LoginController.currentUser;
     public Button newPostButton;
     public Button profileButton;
-    public JFXListView<Post> postList;
     public Button feedButton;
+    public JFXListView PostList;
     ArrayList<Post> posts = new ArrayList<>();
 
     @FXML
     public void initialize(){
-        postList.setItems(FXCollections.observableArrayList(posts));
-        postList.setCellFactory(postList -> new PostItem());
+        for (User user:currentUser.getFollowings()){
+            posts.addAll(user.getPosts());
+        }
+        posts.addAll(currentUser.getPosts());
+        PostList.setItems(FXCollections.observableArrayList(posts));
+        PostList.setCellFactory(postList -> new PostItem());
     }
 
     public void newPostButton(ActionEvent actionEvent){
