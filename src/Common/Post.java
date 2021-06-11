@@ -1,11 +1,8 @@
 package Common;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.Map;
 import java.util.Objects;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Post implements Serializable {
@@ -13,7 +10,7 @@ public class Post implements Serializable {
     private User publisher;
     private String title;
     private String description;
-    private ArrayList<User> likes = new ArrayList<>();
+    private CopyOnWriteArrayList<String> likes = new CopyOnWriteArrayList<>();
     private int reposts = 0;
     private final Date date;
     private CopyOnWriteArrayList<Comment> comments = new CopyOnWriteArrayList<>();
@@ -62,15 +59,15 @@ public class Post implements Serializable {
         return date;
     }
 
-    public void addLike(User user){
-        this.likes.add(user);
+    public void addLike(String username){
+        this.likes.add(username);
     }
 
-    public void removeLike(User user){
-        this.likes.remove(user);
+    public void removeLike(String username){
+        this.likes.remove(username);
     }
 
-    public ArrayList<User> getLikes() {
+    public CopyOnWriteArrayList<String> getLikes() {
         return likes;
     }
 

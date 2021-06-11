@@ -112,7 +112,7 @@ public class API {
         User target = Server.users.get(targetUsername);
         for (Post post : target.getPosts()) {
             if (post.equals(likedPost))
-                post.addLike(Server.users.get(username));
+                post.addLike(username);
         }
         answer.put("answer", true);
         answer.put("command", Command.LIKE);
@@ -129,7 +129,7 @@ public class API {
         User target = Server.users.get(targetUsername);
         for (Post post : target.getPosts()) {
             if (post.equals(dislikedPost))
-                post.removeLike(Server.users.get(username));
+                post.removeLike(username);
         }
         answer.put("answer", true);
         answer.put("command", Command.DISLIKE);
@@ -232,6 +232,14 @@ public class API {
         String username = (String) receive.get("username");
         answer.put("answer" , Server.users.get(username).getPassword());
         answer.put("command" , Command.GET_PASSWORD);
+        return answer;
+    }
+
+    public static Map<String , Object> getUser(Map<String , Object> receive){
+        Map<String , Object> answer = new HashMap<>();
+        String username = (String) receive.get("username");
+        answer.put("answer" , Server.users.get(username));
+        answer.put("command" , Command.GET_USER);
         return answer;
     }
 }

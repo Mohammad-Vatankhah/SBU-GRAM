@@ -19,7 +19,7 @@
       <JFXTextField fx:id="PhoneNumberField" focusColor="#11d819" layoutX="99.0" layoutY="318.0" prefHeight="31.0" prefWidth="199.0" promptText="Phone number" />
       <JFXCheckBox layoutX="316.0" layoutY="402.0" onAction="#showPass" text="show" />
       <JFXTextField fx:id="passwordVisible" focusColor="#11d819" layoutX="98.0" layoutY="395.0" prefHeight="31.0" prefWidth="199.0" promptText="Password" visible="false" />
-      <Label fx:id="passwordHint1" layoutX="68.0" layoutY="426.0" text="-Passwords should countain at least 8 characters." />
+      <Label fx:id="passwordHint1" layoutX="68.0" layoutY="426.0" text="-Passwords should contain at least 8 characters." />
       <Label fx:id="passwordHint2" layoutX="108.0" layoutY="443.0" text="(A mixture of letters and numbers)" />
       <JFXTextField fx:id="locationField" focusColor="#11d819" layoutX="99.0" layoutY="279.0" prefHeight="31.0" prefWidth="199.0" promptText="Location" />
       <DatePicker fx:id="birthdatePick" layoutX="98.0" layoutY="250.0" prefHeight="31.0" prefWidth="199.0" promptText="Birthdate" />
@@ -29,7 +29,7 @@
             <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/user.png" />
          </image>
       </ImageView>
-      <Label fx:id="passwordRegexError" layoutX="74.0" layoutY="434.0" text="-your password does not meet the requirements." textFill="RED" visible="false" />
+      <Label fx:id="passwordRegexError" layoutX="74.0" layoutY="450.0" text="-your password does not meet the requirements." textFill="RED" visible="false" />
       <Label layoutX="305.0" layoutY="168.0" text="*" textFill="RED">
          <font>
             <Font size="16.0" />

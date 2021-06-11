@@ -64,7 +64,7 @@ public class SignupController {
             passwordHint1.setVisible(false);
             passwordHint2.setVisible(false);
             emptyFields.setVisible(true);
-        }
+        } else emptyFields.setVisible(false);
 
         if (passwordField.isVisible()) {
                 password = passwordField.getText();
@@ -90,6 +90,7 @@ public class SignupController {
 
         if (!usernameField.getText().equals("") && !firstNameField.getText().equals("") && !lastNAmeField.getText().equals("") && password.matches(regex) && !usernameUnique){
             API.signup(username , password , name , lastName , location , phone , birthdate , userProfile);
+            LoginController.currentUser = API.getUser(username);
             try {
                 new PageLoader().load("feed" , 414 , 637);
             } catch (IOException e) {

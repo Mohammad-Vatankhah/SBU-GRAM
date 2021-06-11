@@ -3,6 +3,7 @@ package Client.Model;
 import Common.Command;
 import Common.Comment;
 import Common.Post;
+import Common.User;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -167,5 +168,14 @@ public class API {
         send.put("username" , username);
         receive = ClientOnline.send(send);
         return (String) receive.get("answer");
+    }
+
+    public static User getUser(String username){
+        Map<String , Object> send = new HashMap<>();
+        Map<String , Object> receive;
+        send.put("command" , Command.GET_USER);
+        send.put("username" , username);
+        receive = ClientOnline.send(send);
+        return (User) receive.get("answer");
     }
 }
