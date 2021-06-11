@@ -29,13 +29,14 @@ public class API {
         return receive;
     }
 
-    public static boolean signup(String username , String password , String name , String lastname , String location , String phoneNumber , String birthdate , byte[] profile){
+    public static boolean signup(String username , String password , String name , String lastname , String location , String phoneNumber , String birthdate , byte[] profile , String profileAddress){
         Map<String,Object> send = new HashMap<>();
         Map<String,Object> receive;
         send.put("command" , Command.SIGNUP);
         send.put("username" , username);
         send.put("password" , password);
         send.put("name" , name);
+        send.put("profileAddress" , profileAddress);
         send.put("lastname" , lastname);
         send.put("phoneNumber" , phoneNumber);
         send.put("location" , location);

@@ -54,6 +54,7 @@ public class API {
             String password = (String) receive.get("password");
             User user = new User(name, lastname, username, password);
             user.setPhoneNumber((String) receive.get("phoneNumber"));
+            user.setProfileAddress((String) receive.get("profileAddress"));
             user.setBirthdate((String) receive.get("birthdate"));
             user.setProfile((byte[]) receive.get("profile"));
             user.setLocation((String) receive.get("location"));

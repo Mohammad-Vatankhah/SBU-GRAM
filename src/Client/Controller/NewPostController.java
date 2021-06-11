@@ -40,9 +40,9 @@ public class NewPostController {
     public Label imageError;
 
     public void share(ActionEvent actionEvent) {
-        if (titleField.getText().equals("") || descriptionField.getText().equals("") || imageBox == null) {
+        if (titleField.getText().equals("") || descriptionField.getText().equals("") || postImage == null) {
             fieldError.setVisible(titleField.getText().equals("") || descriptionField.getText().equals(""));
-            imageError.setVisible(imageBox == null);
+            imageError.setVisible(postImage == null);
         }
         else {
             Post post = new Post(currentUser.getUsername(), currentUser, titleField.getText(), descriptionField.getText(), new Date());

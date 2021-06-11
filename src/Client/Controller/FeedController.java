@@ -34,7 +34,7 @@ public class FeedController {
 
     public void newPostButton(ActionEvent actionEvent){
         try {
-            new PageLoader().load("newPost" , 414 , 637);
+            new PageLoader().load("newPostPage" , 414 , 637);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -50,7 +50,7 @@ public class FeedController {
 
     public void newPostImage(MouseEvent mouseEvent){
         try {
-            new PageLoader().load("newPost" , 414 , 637);
+            new PageLoader().load("newPostPage" , 414 , 637);
         } catch (IOException e) {
             e.printStackTrace();
         }

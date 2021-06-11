@@ -22,6 +22,7 @@ import java.util.ArrayList;
 
 public class SignupController {
     public byte[] userProfile;
+    public String profileAddress;
     public TextField usernameField;
     public JFXPasswordField passwordField;
     public JFXTextField firstNameField;
@@ -42,6 +43,7 @@ public class SignupController {
     {
         try {
             userProfile = new FileInputStream("F:\\SBU\\exc\\AP\\SBU_gram\\images\\user.png").readAllBytes();
+            profileAddress = "F:\\SBU\\exc\\AP\\SBU_gram\\images\\user.png";
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -89,7 +91,7 @@ public class SignupController {
         }
 
         if (!usernameField.getText().equals("") && !firstNameField.getText().equals("") && !lastNAmeField.getText().equals("") && password.matches(regex) && !usernameUnique){
-            API.signup(username , password , name , lastName , location , phone , birthdate , userProfile);
+            API.signup(username , password , name , lastName , location , phone , birthdate , userProfile , profileAddress);
             LoginController.currentUser = API.getUser(username);
             try {
                 new PageLoader().load("feed" , 414 , 637);
@@ -135,6 +137,7 @@ public class SignupController {
             Image image = new Image(selectedFile.toURI().toString());
             try {
                 userProfile = new FileInputStream(selectedFile).readAllBytes();
+                profileAddress = selectedFile.getPath();
             } catch (IOException e) {
                 e.printStackTrace();
             }

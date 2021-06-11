@@ -39,9 +39,9 @@
         <JFXTextArea fx:id="descriptionField" focusColor="#11d819" layoutX="12.0" layoutY="323.0" prefHeight="150.0" prefWidth="379.0" promptText="Description" />
         <TextField fx:id="titleField" layoutX="127.0" layoutY="288.0" promptText="Title" />
         <JFXButton fx:id="shareButton" buttonType="RAISED" layoutX="134.0" layoutY="522.0" onAction="#share" prefHeight="31.0" prefWidth="133.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Share!" textFill="WHITE" />
-      <Rectangle fx:id="imageBox" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" layoutX="46.0" layoutY="32.0" stroke="BLACK" strokeType="INSIDE" width="311.0" />
-      <JFXButton fx:id="addImageButton" buttonType="RAISED" layoutX="135.0" layoutY="244.0" onAction="#addImage" prefHeight="31.0" prefWidth="133.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Add image" textFill="WHITE" />
-      <Label fx:id="fieldError" layoutX="103.0" layoutY="483.0" text="Please fill the title or description field!" textFill="RED" visible="false" />
-      <Label fx:id="imageError" layoutX="143.0" layoutY="500.0" text="Please add an image!" textFill="RED" visible="false" />
+      <Rectangle fx:id="imageBox" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" layoutX="46.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" width="311.0" />
+      <JFXButton fx:id="addImageButton" buttonType="RAISED" layoutX="135.0" layoutY="240.0" onAction="#addImage" prefHeight="31.0" prefWidth="133.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Add image" textFill="WHITE" />
+      <Label fx:id="fieldError" layoutX="100.0" layoutY="483.0" text="Please fill the title or description field!" textFill="RED" visible="false" />
+      <Label fx:id="imageError" layoutX="144.0" layoutY="500.0" text="Please add an image!" textFill="RED" visible="false" />
     </children>
 </Pane>
