@@ -55,7 +55,15 @@ public class PostItemController {
         imageBox.setFill(new ImagePattern(new Image(new ByteArrayInputStream(post.getImage()))));
         imageBox.setEffect(new DropShadow(+25d, 0d, +2d, Color.DARKSEAGREEN));
         imageBox.setVisible(true);
-        return root;
+        if (post.getLikes().contains(currentUser)) {
+            greenLike.setVisible(true);
+            whiteLike.setVisible(false);
+        }
+        else {
+            whiteLike.setVisible(true);
+            greenLike.setVisible(false);
+        }
+            return root;
     }
 
     public void repost(MouseEvent mouseEvent){
@@ -64,6 +72,7 @@ public class PostItemController {
 
     public void disLike(MouseEvent mouseEvent) {
         API.dislike(currentUser , post.getPublisher().getUsername() , post);
+        likes.setText(String.valueOf(post.getLikes().size() - 1));
         greenLike.setVisible(false);
         whiteLike.setVisible(true);
     }
@@ -73,6 +82,7 @@ public class PostItemController {
 
     public void likeImage(MouseEvent mouseEvent) {
         API.like(currentUser , post.getPublisher().getUsername() , post);
+        likes.setText(String.valueOf(post.getLikes().size() + 1));
         greenLike.setVisible(true);
         whiteLike.setVisible(false);
     }

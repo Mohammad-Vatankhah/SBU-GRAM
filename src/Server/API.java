@@ -120,7 +120,7 @@ public class API {
         answer.put("answer", true);
         answer.put("command", Command.LIKE);
         Date date = new Date();
-        System.out.println("action: like\n" + username + "like\n" + "message: " + targetUsername + " " + likedPost.getTitle() + "\ntime: " + format.format(date));
+        System.out.println("action: like\n" + username + " like\n" + "message: " + targetUsername + " " + likedPost.getTitle() + "\ntime: " + format.format(date));
         Server.dataBase.updateDataBase();
         return answer;
     }
@@ -138,7 +138,7 @@ public class API {
         answer.put("answer", true);
         answer.put("command", Command.DISLIKE);
         Date date = new Date();
-        System.out.println("action: dislike\n" + username + "dislike\n" + "message: " + targetUsername + " " + dislikedPost.getTitle() + "\ntime: " + format.format(date));
+        System.out.println("action: dislike\n" + username + " dislike\n" + "message: " + targetUsername + " " + dislikedPost.getTitle() + "\ntime: " + format.format(date));
         Server.dataBase.updateDataBase();
         return answer;
     }
