@@ -21,15 +21,15 @@ public class FeedController {
     public Button profileButton;
     public Button feedButton;
     public JFXListView<Post> PostList;
-    ArrayList<Post> posts = new ArrayList<>();
+    public ArrayList<Post> posts = new ArrayList<>();
 
     @FXML
     public void initialize(){
         User currentUser = API.getUser(currentUsername);
         for (User user:currentUser.getFollowings()){
-            posts.addAll(user.getPosts());
+            posts.addAll(API.getPosts(user.getUsername()));
         }
-        posts.addAll(currentUser.getPosts());
+        posts.addAll(API.getPosts(currentUsername));
         Collections.sort(posts);
         PostList.setItems(FXCollections.observableArrayList(posts));
         PostList.setCellFactory(postList -> new PostItem());

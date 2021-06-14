@@ -38,9 +38,9 @@ public class PageLoader {
     }
 
     public void load(String url , int width , int height) throws IOException {
-        scene = new Scene(new PageLoader().loadFXML(url));
         stage.setWidth(width);
         stage.setHeight(height);
+        scene = new Scene(new PageLoader().loadFXML(url));
         stage.setScene(scene);
         stage.show();
     }
@@ -48,6 +48,6 @@ public class PageLoader {
     public void load(String fxml, Object controller) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/Client/View/" + fxml + ".fxml"));
         fxmlLoader.setController(controller);
-        fxmlLoader.load();
+            fxmlLoader.load();
     }
 }

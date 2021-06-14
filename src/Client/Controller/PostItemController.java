@@ -2,14 +2,12 @@ package Client.Controller;
 
 import Common.Post;
 import Client.Model.*;
-import Common.User;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
@@ -23,6 +21,7 @@ public class PostItemController {
     public Label username;
     public Label title;
     public Label writer;
+    public Label description;
     public Label likes;
     public ImageView greenLike;
     public Rectangle imageBox;
@@ -30,11 +29,15 @@ public class PostItemController {
     public Circle profileImage;
     public AnchorPane root;
     public ImageView whiteLike;
-    Post post;
+    public Post post;
 
-    public PostItemController(Post post) throws IOException {
-        new PageLoader().load("postItem", this);
+    public PostItemController(Post post) {
         this.post = post;
+        try {
+            new PageLoader().load("postItem", this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public AnchorPane init(){
@@ -42,13 +45,15 @@ public class PostItemController {
         title.setText(post.getTitle());
         reposts.setText(String.valueOf(post.getReposts()));
         likes.setText(String.valueOf(post.getLikes().size()));
+        username.setText(post.getPublisher().getUsername());
+        description.setText(post.getDescription());
         profileImage.setStroke(javafx.scene.paint.Color.SEAGREEN);
         profileImage.setFill(new ImagePattern(new Image(new ByteArrayInputStream(post.getPublisher().getProfile()))));
-        profileImage.setEffect(new DropShadow(+25d , 0d , +2d , Color.DARKSEAGREEN));
+        profileImage.setEffect(new DropShadow(+25d, 0d, +2d, Color.DARKSEAGREEN));
         profileImage.setVisible(true);
         imageBox.setStroke(javafx.scene.paint.Color.SEAGREEN);
         imageBox.setFill(new ImagePattern(new Image(new ByteArrayInputStream(post.getImage()))));
-        imageBox.setEffect(new DropShadow(+25d , 0d , +2d , Color.DARKSEAGREEN));
+        imageBox.setEffect(new DropShadow(+25d, 0d, +2d, Color.DARKSEAGREEN));
         imageBox.setVisible(true);
         return root;
     }

@@ -165,7 +165,7 @@ public class API {
     public static Map<String , Object> getPosts(Map<String , Object> receive){
         Map<String , Object> answer = new HashMap<>();
         String username = (String) receive.get("username");
-        ArrayList<Post> posts = Server.users.get(username).getPosts();
+        ArrayList<Post> posts = new ArrayList<>(Server.users.get(username).getPosts());
         answer.put("answer" , posts);
         answer.put("command" , Command.GET_POSTS);
         Date date = new Date();
