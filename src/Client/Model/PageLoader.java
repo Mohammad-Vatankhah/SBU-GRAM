@@ -28,9 +28,15 @@ public class PageLoader {
         scene.setRoot(loadFXML(fxml));
     }
 
-    private Parent loadFXML(String fxml) throws IOException {
+    private Parent loadFXML(String fxml) {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/Client/View/" + fxml + ".fxml"));
-        return fxmlLoader.load();
+        Parent parent = null;
+        try {
+            parent = fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return parent;
     }
 
     public static Stage getPrimaryStage() {
@@ -38,9 +44,9 @@ public class PageLoader {
     }
 
     public void load(String url , int width , int height) throws IOException {
+        scene = new Scene(new PageLoader().loadFXML(url));
         stage.setWidth(width);
         stage.setHeight(height);
-        scene = new Scene(new PageLoader().loadFXML(url));
         stage.setScene(scene);
         stage.show();
     }

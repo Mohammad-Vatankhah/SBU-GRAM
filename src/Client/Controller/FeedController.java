@@ -45,7 +45,7 @@ public class FeedController {
 
     public void profileButton(ActionEvent actionEvent){
         try {
-            new PageLoader().load("profilePage" , 414 , 637);
+            new PageLoader().load("CurrentUserProfile" , 414 , 637);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -61,7 +61,7 @@ public class FeedController {
 
     public void profileImage(MouseEvent mouseEvent){
         try {
-            new PageLoader().load("profilePage" , 414 , 637);
+            new PageLoader().load("CurrentUserProfile" , 414 , 637);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -78,6 +78,14 @@ public class FeedController {
     public void searchImage(MouseEvent mouseEvent) {
         try {
             new PageLoader().load("search" , 414 , 637);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void refreshButton(ActionEvent actionEvent) {
+        try {
+            new PageLoader().load("feed" , 414 , 637);
         } catch (IOException e) {
             e.printStackTrace();
         }

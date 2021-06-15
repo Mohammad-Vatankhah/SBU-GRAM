@@ -9,6 +9,7 @@ public class Post implements Serializable , Comparable<Post> {
     private final String writer;
     private User publisher;
     private String title;
+    private int numOfLikes = 0;
     private String description;
     private byte[] image;
     private CopyOnWriteArrayList<String> likes = new CopyOnWriteArrayList<>();
@@ -103,6 +104,18 @@ public class Post implements Serializable , Comparable<Post> {
 
     public void setImage(byte[] image) {
         this.image = image;
+    }
+
+    public void addLikeNum(){
+        this.numOfLikes++;
+    }
+
+    public void removeLikeNum(){
+        this.numOfLikes--;
+    }
+
+    public int getNumOfLikes() {
+        return numOfLikes;
     }
 
     @Override

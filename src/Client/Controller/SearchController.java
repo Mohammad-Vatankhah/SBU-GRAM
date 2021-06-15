@@ -28,7 +28,7 @@ public class SearchController {
 
     public void profileButton(ActionEvent actionEvent) {
         try {
-            new PageLoader().load("profilePage" , 414 , 637);
+            new PageLoader().load("CurrentUserProfile" , 414 , 637);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -52,7 +52,7 @@ public class SearchController {
 
     public void profileImage(MouseEvent mouseEvent) {
         try {
-            new PageLoader().load("profilePage" , 414 , 637);
+            new PageLoader().load("CurrentUserProfile" , 414 , 637);
         } catch (IOException e) {
             e.printStackTrace();
         }

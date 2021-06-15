@@ -75,7 +75,7 @@ public class SettingController {
 
     public void back(MouseEvent mouseEvent){
         try {
-            new PageLoader().load("profilePage" , 414 , 637);
+            new PageLoader().load("CurrentUserProfile" , 414 , 637);
         } catch (IOException e) {
             e.printStackTrace();
         }

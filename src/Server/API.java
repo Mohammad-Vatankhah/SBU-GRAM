@@ -114,8 +114,10 @@ public class API {
         Post likedPost = (Post) receive.get("post");
         User target = Server.users.get(targetUsername);
         for (Post post : target.getPosts()) {
-            if (post.equals(likedPost))
+            if (post.equals(likedPost)) {
                 post.addLike(username);
+                post.addLikeNum();
+            }
         }
         answer.put("answer", true);
         answer.put("command", Command.LIKE);
@@ -132,8 +134,10 @@ public class API {
         Post dislikedPost = (Post) receive.get("post");
         User target = Server.users.get(targetUsername);
         for (Post post : target.getPosts()) {
-            if (post.equals(dislikedPost))
+            if (post.equals(dislikedPost)) {
                 post.removeLike(username);
+                post.removeLikeNum();
+            }
         }
         answer.put("answer", true);
         answer.put("command", Command.DISLIKE);
