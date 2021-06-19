@@ -82,7 +82,22 @@ public class PostItemController {
         whiteLike.setVisible(true);
     }
 
-    public void addComment(MouseEvent mouseEvent) {
+    public void viewCommentsIcon(MouseEvent mouseEvent) {
+        try {
+            CommentPageController.setPost(post);
+            new PageLoader().load("commentPage" , 414 , 637);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void viewComments(MouseEvent mouseEvent) {
+        try {
+            CommentPageController.setPost(post);
+            new PageLoader().load("commentPage" , 414 , 637);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void likeImage(MouseEvent mouseEvent) {

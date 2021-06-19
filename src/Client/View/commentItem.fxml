@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="139.0" prefWidth="363.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Circle fill="DODGERBLUE" layoutX="42.0" layoutY="42.0" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label fx:id="username" layoutX="77.0" layoutY="30.0" onMouseClicked="#userProfile" text="username">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="date" layoutX="28.0" layoutY="117.0" text="Label" />
+      <Label fx:id="comment" layoutX="6.0" layoutY="55.0" prefHeight="66.0" prefWidth="354.0" text="comment" />
+   </children>
+</Pane>

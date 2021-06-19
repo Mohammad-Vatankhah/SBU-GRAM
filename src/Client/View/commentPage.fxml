@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.CommentPageController">
+   <children>
+      <JFXListView fx:id="commentList" layoutX="-2.0" layoutY="139.0" prefHeight="461.0" prefWidth="406.0" />
+      <ImageView fitHeight="31.0" fitWidth="24.0" layoutX="1.0" layoutY="2.0" onMouseClicked="#backIcon" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/back%20icon.png" />
+         </image>
+      </ImageView>
+      <JFXTextArea fx:id="commentTextArea" focusColor="#11d819" layoutX="25.0" layoutY="14.0" prefHeight="89.0" prefWidth="322.0" />
+      <JFXButton fx:id="sendButton" buttonType="RAISED" layoutX="359.0" layoutY="51.0" onAction="#send" prefHeight="38.0" prefWidth="38.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text=" " textFill="WHITE" />
+      <ImageView fitHeight="52.0" fitWidth="24.0" layoutX="366.0" layoutY="58.0" onMouseClicked="#sendIcon" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/send%20icon.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="err" layoutX="131.0" layoutY="111.0" text="Please write a comment!" textFill="RED" visible="false">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

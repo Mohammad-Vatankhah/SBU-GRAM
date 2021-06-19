@@ -3,10 +3,10 @@ package Common;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Comment implements Serializable {
-    String comment;
-    Date date;
-    User user;
+public class Comment implements Serializable , Comparable<Comment> {
+    public String comment;
+    public Date date;
+    public User user;
 
     public Comment(String comment, Date date, User user) {
         this.comment = comment;
@@ -36,5 +36,10 @@ public class Comment implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @Override
+    public int compareTo(Comment comment) {
+        return comment.date.compareTo(this.date);
     }
 }
