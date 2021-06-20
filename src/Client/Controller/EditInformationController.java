@@ -11,7 +11,6 @@ import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 
 public class EditInformationController {
-    public String currentUser = LoginController.currentUser;
     public JFXTextField firstNameField;
     public JFXTextField lastNAmeField;
     public DatePicker birthdatePick;
@@ -24,7 +23,7 @@ public class EditInformationController {
             emptyFields.setVisible(true);
         }
         else {
-            API.updateProfile(currentUser , firstNameField.getText() , birthdatePick.getEditor().getText() , lastNAmeField.getText() , locationField.getText() , PhoneNumberField.getText() );
+            API.updateProfile(LoginController.currentUser , firstNameField.getText() , birthdatePick.getEditor().getText() , lastNAmeField.getText() , locationField.getText() , PhoneNumberField.getText() );
             try {
                 new PageLoader().load("setting" , 414 , 637);
             } catch (IOException e) {

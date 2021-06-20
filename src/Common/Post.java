@@ -8,7 +8,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Post implements Serializable , Comparable<Post> {
     private final String writer;
-    private User publisher;
+    private String publisher;
     private String title;
     private int numOfLikes = 0;
     private String description;
@@ -18,7 +18,7 @@ public class Post implements Serializable , Comparable<Post> {
     private final Date date;
     private CopyOnWriteArrayList<Comment> comments = new CopyOnWriteArrayList<>();
 
-    public Post(String writer, User publisher , String title, String description , Date date) {
+    public Post(String writer, String publisher , String title, String description , Date date) {
         this.writer = writer;
         this.publisher = publisher;
         this.title = title;
@@ -82,11 +82,11 @@ public class Post implements Serializable , Comparable<Post> {
         return comments;
     }
 
-    public User getPublisher() {
+    public String getPublisher() {
         return publisher;
     }
 
-    public void setPublisher(User publisher) {
+    public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
 

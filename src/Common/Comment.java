@@ -6,9 +6,9 @@ import java.util.Date;
 public class Comment implements Serializable , Comparable<Comment> {
     public String comment;
     public Date date;
-    public User user;
+    public String user;
 
-    public Comment(String comment, Date date, User user) {
+    public Comment(String comment, Date date, String user) {
         this.comment = comment;
         this.date = date;
         this.user = user;
@@ -30,11 +30,11 @@ public class Comment implements Serializable , Comparable<Comment> {
         this.date = date;
     }
 
-    public User getUser() {
+    public String getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(String user) {
         this.user = user;
     }
 

@@ -1,5 +1,6 @@
 package Client.Controller;
 
+import Client.Model.API;
 import Client.Model.PageLoader;
 import Common.Comment;
 import javafx.scene.effect.DropShadow;
@@ -18,7 +19,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 public class CommentItemController {
-    public String currentUser = LoginController.currentUser;
     public Label username;
     public Label date;
     public AnchorPane root;
@@ -37,10 +37,10 @@ public class CommentItemController {
     }
 
     public Pane init(){
-        username.setText(comment.getUser().getUsername());
+        username.setText(comment.getUser());
         description.setText(comment.getComment());
         profileImage.setStroke(javafx.scene.paint.Color.SEAGREEN);
-        profileImage.setFill(new ImagePattern(new Image(new ByteArrayInputStream(comment.getUser().getProfile()))));
+        profileImage.setFill(new ImagePattern(new Image(new ByteArrayInputStream(API.getUser(comment.getUser()).getProfile()))));
         profileImage.setEffect(new DropShadow(+25d, 0d, +2d, Color.DARKSEAGREEN));
         profileImage.setVisible(true);
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");

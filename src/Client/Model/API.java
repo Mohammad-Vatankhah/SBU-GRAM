@@ -183,11 +183,19 @@ public class API {
 
     public static void changePass(String username , String newPass){
         Map<String,Object> send = new HashMap<>();
-        Map<String,Object> receive;
         send.put("command" , Command.CHANGE_PASS);
         send.put("newPass" , newPass);
         send.put("username" , username);
-        receive = ClientOnline.send(send);
+        ClientOnline.send(send);
+    }
+
+    public static void changeProfilePhoto(String username , byte[] newPhoto){
+        Map<String,Object> send = new HashMap<>();
+        Map<String,Object> receive;
+        send.put("command" , Command.CHANGE_PHOTO);
+        send.put("username" , username);
+        send.put("newPhoto" , newPhoto);
+        ClientOnline.send(send);
     }
 
     public static User getUser(String username){

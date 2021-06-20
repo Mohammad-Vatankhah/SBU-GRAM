@@ -1,10 +1,9 @@
 package Common;
 
-import javafx.scene.image.Image;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class User implements Serializable {
     private byte[] profile;
@@ -16,8 +15,8 @@ public class User implements Serializable {
     private String lastName;
     private String birthdate;
     private String location;
-    private ArrayList<User> followings = new ArrayList<>();
-    private ArrayList<User> followers = new ArrayList<>();
+    private CopyOnWriteArrayList<User> followings = new CopyOnWriteArrayList<>();
+    private CopyOnWriteArrayList<User> followers = new CopyOnWriteArrayList<>();
     private ArrayList<Post> posts = new ArrayList<>();
 
     public User(String name ,String lastName , String username, String password) {
@@ -92,7 +91,7 @@ public class User implements Serializable {
         this.location = location;
     }
 
-    public ArrayList<User> getFollowings() {
+    public CopyOnWriteArrayList<User> getFollowings() {
         return followings;
     }
 
@@ -104,7 +103,7 @@ public class User implements Serializable {
         this.followings.remove(user);
     }
 
-    public ArrayList<User> getFollowers() {
+    public CopyOnWriteArrayList<User> getFollowers() {
         return followers;
     }
 

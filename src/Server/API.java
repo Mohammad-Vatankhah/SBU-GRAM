@@ -75,7 +75,7 @@ public class API {
         answer.put("answer", true);
         answer.put("command", Command.PUBLISH_POST);
         Date date = new Date();
-        System.out.println(username + " publish\n" + "message: " + post.getTitle() + " " + post.getPublisher().getUsername() + "\ntime: " + format.format(date));
+        System.out.println(username + " publish\n" + "message: " + post.getTitle() + " " + post.getPublisher() + "\ntime: " + format.format(date));
         Server.dataBase.updateDataBase();
         return answer;
     }
@@ -218,12 +218,25 @@ public class API {
         Post post = (Post) receive.get("post");
         String username = (String) receive.get("username");
         User user = Server.users.get(username);
-        post.setPublisher(user);
+        post.setPublisher(user.getUsername());
         user.addPost(post);
         answer.put("answer" , true);
         answer.put("command" , Command.REPOST);
         Date date = new Date();
         System.out.println("action: repost\n" + username + " repost\n" + "message: " + post.getWriter() + " " + post.getTitle() + "\ntime: " + format.format(date));
+        Server.dataBase.updateDataBase();
+        return answer;
+    }
+
+    public static Map<String , Object> changeProfilePhoto(Map<String , Object> receive){
+        Map<String , Object> answer = new HashMap<>();
+        String username = (String) receive.get("username");
+        byte[] newPhoto = (byte[]) receive.get("newPhoto");
+        User user = Server.users.get(username);
+        user.setProfile(newPhoto);
+        answer.put("command" , Command.CHANGE_PHOTO);
+        answer.put("answer" , true);
+        System.out.println(username + " update profile photo\ntime: " + format.format(new Date()));
         Server.dataBase.updateDataBase();
         return answer;
     }
@@ -282,7 +295,8 @@ public class API {
     public static Map<String , Object> getUser(Map<String , Object> receive){
         Map<String , Object> answer = new HashMap<>();
         String username = (String) receive.get("username");
-        answer.put("answer" , Server.users.get(username));
+        User user = Server.users.get(username);
+        answer.put("answer" , user);
         answer.put("command" , Command.GET_USER);
         return answer;
     }

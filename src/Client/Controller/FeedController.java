@@ -16,7 +16,6 @@ import java.util.Collections;
 
 public class FeedController {
 
-    public static String currentUsername = LoginController.currentUser;
     public Button newPostButton;
     public Button profileButton;
     public Button feedButton;
@@ -25,11 +24,11 @@ public class FeedController {
 
     @FXML
     public void initialize(){
-        User currentUser = API.getUser(currentUsername);
+        User currentUser = API.getUser(LoginController.currentUser);
         for (User user:currentUser.getFollowings()){
             posts.addAll(API.getPosts(user.getUsername()));
         }
-        posts.addAll(API.getPosts(currentUsername));
+        posts.addAll(API.getPosts(LoginController.currentUser));
         Collections.sort(posts);
         PostList.setItems(FXCollections.observableArrayList(posts));
         PostList.setCellFactory(postList -> new PostItem());

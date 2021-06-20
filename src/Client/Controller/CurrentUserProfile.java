@@ -23,7 +23,6 @@ import java.util.Collections;
 
 public class CurrentUserProfile {
 
-    public String currentUsername = LoginController.currentUser;
     public Button feedButton;
     public Button newPostButton;
     public Circle profileCircle;
@@ -31,12 +30,12 @@ public class CurrentUserProfile {
     public Label followers;
     public Label username;
     public Label name;
-    public JFXListView postList;
+    public JFXListView<Post> postList;
     public ArrayList<Post> posts = new ArrayList<>();
 
     @FXML
     public void initialize(){
-        User currentUser = API.getUser(currentUsername);
+        User currentUser = API.getUser(LoginController.currentUser);
         profileCircle.setStroke(javafx.scene.paint.Color.SEAGREEN);
         profileCircle.setFill(new ImagePattern(new Image(new ByteArrayInputStream(currentUser.getProfile()))));
         profileCircle.setEffect(new DropShadow(+25d, 0d, +2d, Color.DARKSEAGREEN));
@@ -45,7 +44,7 @@ public class CurrentUserProfile {
         followers.setText(String.valueOf(currentUser.getFollowers().size()));
         username.setText(currentUser.getUsername());
         name.setText(currentUser.getName() + " " + currentUser.getLastName());
-        posts.addAll(API.getPosts(currentUsername));
+        posts.addAll(API.getPosts(LoginController.currentUser));
         Collections.sort(posts);
         postList.setItems(FXCollections.observableArrayList(posts));
         postList.setCellFactory(postList -> new PostItem());

@@ -1,6 +1,7 @@
 package Client.Controller;
 
 import Client.Model.*;
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.effect.DropShadow;
@@ -13,17 +14,19 @@ import javafx.stage.FileChooser;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class SettingController {
-    public String currentUser = LoginController.currentUser;
+    public byte[] newPhoto;
     public Circle circleProfile;
+    public JFXButton changeButton;
 
     @FXML
     public void initialize() {
         circleProfile.setStroke(Color.SEAGREEN);
-        circleProfile.setFill(new ImagePattern(new Image(new ByteArrayInputStream(API.getUser(currentUser).getProfile()))));
+        circleProfile.setFill(new ImagePattern(new Image(new ByteArrayInputStream(API.getUser(LoginController.currentUser).getProfile()))));
         circleProfile.setEffect(new DropShadow(+25d, 0d, +2d, Color.DARKSEAGREEN));
         circleProfile.setVisible(true);
     }
@@ -49,6 +52,12 @@ public class SettingController {
         File selectedFile = fileChooser.showOpenDialog(null);
         if (selectedFile != null){
             Image image = new Image(selectedFile.toURI().toString());
+            changeButton.setVisible(true);
+            try {
+                newPhoto = new FileInputStream(selectedFile).readAllBytes();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             circleProfile.setStroke(Color.SEAGREEN);
             circleProfile.setFill(new ImagePattern(image));
             circleProfile.setEffect(new DropShadow(+25d , 0d , +2d , Color.DARKSEAGREEN));
@@ -94,6 +103,12 @@ public class SettingController {
         File selectedFile = fileChooser.showOpenDialog(null);
         if (selectedFile != null){
             Image image = new Image(selectedFile.toURI().toString());
+            changeButton.setVisible(true);
+            try {
+                newPhoto = new FileInputStream(selectedFile).readAllBytes();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             circleProfile.setStroke(Color.SEAGREEN);
             circleProfile.setFill(new ImagePattern(image));
             circleProfile.setEffect(new DropShadow(+25d , 0d , +2d , Color.DARKSEAGREEN));
@@ -115,5 +130,9 @@ public class SettingController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void changePhoto(ActionEvent actionEvent) {
+        API.changeProfilePhoto(LoginController.currentUser , newPhoto);
     }
 }

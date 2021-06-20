@@ -26,7 +26,6 @@ import java.util.Date;
 
 public class NewPostController {
     public byte[] postImage = null;
-    public static String currentUser = LoginController.currentUser;
     public Button newPostButton;
     public Button profileButton;
     public JFXTextArea descriptionField;
@@ -45,9 +44,9 @@ public class NewPostController {
             imageError.setVisible(postImage == null);
         }
         else {
-            Post post = new Post(currentUser, API.getUser(currentUser), titleField.getText(), descriptionField.getText(), new Date());
+            Post post = new Post(LoginController.currentUser , LoginController.currentUser , titleField.getText(), descriptionField.getText(), new Date());
             post.setImage(postImage);
-            API.publishPost(currentUser, post);
+            API.publishPost(LoginController.currentUser, post);
             try {
                 new PageLoader().load("feed", 414, 637);
             } catch (IOException e) {

@@ -19,7 +19,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 public class PostItemController {
-    public String currentUser = LoginController.currentUser;
     public Label username;
     public Label title;
     public Label writer;
@@ -48,10 +47,10 @@ public class PostItemController {
         title.setText(post.getTitle());
         reposts.setText(String.valueOf(post.getReposts()));
         likes.setText(String.valueOf(post.getNumOfLikes()));
-        username.setText(post.getPublisher().getUsername());
-        description.setText(post.getPublisher().getUsername() + " : " + post.getDescription());
+        username.setText(post.getPublisher());
+        description.setText(post.getPublisher() + " : " + post.getDescription());
         profileImage.setStroke(javafx.scene.paint.Color.SEAGREEN);
-        profileImage.setFill(new ImagePattern(new Image(new ByteArrayInputStream(post.getPublisher().getProfile()))));
+        profileImage.setFill(new ImagePattern(new Image(new ByteArrayInputStream(API.getUser(post.getPublisher()).getProfile()))));
         profileImage.setEffect(new DropShadow(+25d, 0d, +2d, Color.DARKSEAGREEN));
         profileImage.setVisible(true);
         imageBox.setStroke(javafx.scene.paint.Color.SEAGREEN);
@@ -60,7 +59,7 @@ public class PostItemController {
         imageBox.setVisible(true);
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         date.setText(dateFormat.format(post.getDate()));
-        if (post.getLikes().contains(currentUser)) {
+        if (post.getLikes().contains(LoginController.currentUser)) {
             greenLike.setVisible(true);
             whiteLike.setVisible(false);
         }
@@ -76,7 +75,7 @@ public class PostItemController {
     }
 
     public void disLike(MouseEvent mouseEvent) {
-        API.dislike(currentUser , post.getPublisher().getUsername() , post);
+        API.dislike(LoginController.currentUser , post.getPublisher() , post);
         likes.setText(String.valueOf(post.getLikes().size() - 1));
         greenLike.setVisible(false);
         whiteLike.setVisible(true);
@@ -101,7 +100,7 @@ public class PostItemController {
     }
 
     public void likeImage(MouseEvent mouseEvent) {
-        API.like(currentUser , post.getPublisher().getUsername() , post);
+        API.like(LoginController.currentUser , post.getPublisher() , post);
         likes.setText(String.valueOf(post.getLikes().size() + 1));
         greenLike.setVisible(true);
         whiteLike.setVisible(false);

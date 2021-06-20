@@ -20,7 +20,6 @@ import java.util.Date;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class CommentPageController {
-    public static String currentUsername = LoginController.currentUser;
     public JFXTextArea commentTextArea;
     public JFXListView<Comment> commentList;
     public JFXButton sendButton;
@@ -30,7 +29,7 @@ public class CommentPageController {
 
     @FXML
     public void initialize(){
-        comments = new CopyOnWriteArrayList<>(API.getComment(post , post.getPublisher().getUsername()));
+        comments = new CopyOnWriteArrayList<>(API.getComment(post , post.getPublisher()));
         Collections.sort(comments);
         commentList.setItems(FXCollections.observableArrayList(comments));
         commentList.setCellFactory(commentList -> new CommentItem());
@@ -49,8 +48,8 @@ public class CommentPageController {
             err.setVisible(true);
         }
         else {
-            Comment comment = new Comment(commentTextArea.getText(), new Date(), API.getUser(currentUsername));
-            API.addComment(currentUsername, post.getPublisher().getUsername(), post, comment);
+            Comment comment = new Comment(commentTextArea.getText(), new Date(), LoginController.currentUser);
+            API.addComment(LoginController.currentUser, post.getPublisher(), post, comment);
             try {
                 new PageLoader().load("commentPage", 414, 637);
             } catch (IOException e) {
@@ -63,8 +62,8 @@ public class CommentPageController {
         if (commentTextArea.getText().equals("")) {
             err.setVisible(true);
         } else {
-            Comment comment = new Comment(commentTextArea.getText(), new Date(), API.getUser(currentUsername));
-            API.addComment(currentUsername, post.getPublisher().getUsername(), post, comment);
+            Comment comment = new Comment(commentTextArea.getText(), new Date(), LoginController.currentUser);
+            API.addComment(LoginController.currentUser, post.getPublisher(), post, comment);
             try {
                 new PageLoader().load("commentPage", 414, 637);
             } catch (IOException e) {

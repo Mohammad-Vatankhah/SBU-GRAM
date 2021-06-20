@@ -84,8 +84,13 @@ public class ClientHandler implements Runnable{
                         break;
                     case GET_COMMENTS:
                         answer = API.getComment(receive);
+                        break;
                     case CHANGE_PASS:
                         answer = API.changePass(receive);
+                        break;
+                    case CHANGE_PHOTO:
+                        answer = API.changeProfilePhoto(receive);
+                        break;
                 }
                 socketOut.writeObject(answer);
                 socketOut.flush();
