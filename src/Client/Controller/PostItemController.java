@@ -84,7 +84,7 @@ public class PostItemController {
 
     public void viewCommentsIcon(MouseEvent mouseEvent) {
         try {
-            CommentPageController.setPost(post);
+            CommentPageController.post = post;
             new PageLoader().load("commentPage" , 414 , 637);
         } catch (IOException e) {
             e.printStackTrace();
@@ -93,7 +93,7 @@ public class PostItemController {
 
     public void viewComments(MouseEvent mouseEvent) {
         try {
-            CommentPageController.setPost(post);
+            CommentPageController.post = post;
             new PageLoader().load("commentPage" , 414 , 637);
         } catch (IOException e) {
             e.printStackTrace();

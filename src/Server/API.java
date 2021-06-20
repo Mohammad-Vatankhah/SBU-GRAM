@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class API {
     static SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -154,15 +155,32 @@ public class API {
         Post post = (Post) receive.get("post");
         Comment comment = (Comment) receive.get("comment");
         User target = Server.users.get(targetUsername);
+        int num = 12;
         for (Post post1 : target.getPosts()) {
             if (post1.equals(post))
                 post1.addComment(comment);
+                num = post1.getComments().size();
         }
         answer.put("answer", true);
         answer.put("command", Command.ADD_COMMENT);
         Date date = new Date();
         System.out.println(username + " comment\n" + "message: " + post.getTitle() + "\ntime: " + format.format(date));
         Server.dataBase.updateDataBase();
+        return answer;
+    }
+
+    public static Map<String , Object> getComment(Map<String , Object> receive){
+        Map<String , Object> answer = new HashMap<>();
+        Post post = (Post) receive.get("post");
+        String username = (String) receive.get("targetUsername");
+        ArrayList<Comment>comments;
+        for (Post post1:Server.users.get(username).getPosts()) {
+            if (post.equals(post1)) {
+                comments = new ArrayList<>(post1.getComments());
+                answer.put("comment", comments);
+                answer.put("answer" , true);
+            }
+        }
         return answer;
     }
 
@@ -246,6 +264,18 @@ public class API {
         String username = (String) receive.get("username");
         answer.put("answer" , Server.users.get(username).getPassword());
         answer.put("command" , Command.GET_PASSWORD);
+        return answer;
+    }
+
+    public static Map<String , Object> changePass(Map<String , Object> receive){
+        Map<String , Object> answer = new HashMap<>();
+        String username = (String) receive.get("username");
+        String newPass = (String) receive.get("newPass");
+        Server.users.get(username).setPassword(newPass);
+        answer.put("command" , Command.CHANGE_PASS);
+        answer.put("answer" , true);
+        System.out.println(username + " change password\ntime: " + format.format(new Date()));
+        Server.dataBase.updateDataBase();
         return answer;
     }
 

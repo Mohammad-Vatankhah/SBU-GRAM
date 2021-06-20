@@ -1,6 +1,7 @@
 package Common;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Objects;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -25,25 +26,16 @@ public class Post implements Serializable , Comparable<Post> {
         this.date = date;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Post post = (Post) o;
-        return reposts == post.reposts && Objects.equals(writer, post.writer) && Objects.equals(publisher, post.publisher) && Objects.equals(title, post.title) && Objects.equals(description, post.description) && Objects.equals(likes, post.likes) && Objects.equals(date, post.date) && Objects.equals(comments, post.comments);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(writer, publisher, title, description, likes, reposts, date, comments);
-    }
-
     public String getWriter() {
         return writer;
     }
 
     public String getTitle() {
         return title;
+    }
+
+    public int getHashcode(){
+        return this.hashCode();
     }
 
     public void setTitle(String title) {
@@ -121,5 +113,18 @@ public class Post implements Serializable , Comparable<Post> {
     @Override
     public int compareTo(Post post) {
         return post.date.compareTo(this.date);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Post post = (Post) o;
+        return Objects.equals(writer, post.writer);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(writer);
     }
 }

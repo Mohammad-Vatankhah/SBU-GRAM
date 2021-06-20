@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class CommentPageController {
     public static String currentUsername = LoginController.currentUser;
@@ -24,19 +25,15 @@ public class CommentPageController {
     public JFXListView<Comment> commentList;
     public JFXButton sendButton;
     public static Post post;
-    public ArrayList<Comment> comments;
+    public CopyOnWriteArrayList<Comment> comments;
     public Label err;
 
     @FXML
     public void initialize(){
-        comments = new ArrayList<>(post.getComments());
+        comments = new CopyOnWriteArrayList<>(API.getComment(post , post.getPublisher().getUsername()));
         Collections.sort(comments);
         commentList.setItems(FXCollections.observableArrayList(comments));
         commentList.setCellFactory(commentList -> new CommentItem());
-    }
-
-    public static void setPost(Post post){
-        CommentPageController.post = post;
     }
 
     public void backIcon(MouseEvent mouseEvent) {

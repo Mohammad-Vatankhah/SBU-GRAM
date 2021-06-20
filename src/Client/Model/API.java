@@ -29,7 +29,7 @@ public class API {
         return receive;
     }
 
-    public static boolean signup(String username , String password , String name , String lastname , String location , String phoneNumber , String birthdate , byte[] profile , String profileAddress){
+    public static void signup(String username , String password , String name , String lastname , String location , String phoneNumber , String birthdate , byte[] profile , String profileAddress){
         Map<String,Object> send = new HashMap<>();
         Map<String,Object> receive;
         send.put("command" , Command.SIGNUP);
@@ -43,17 +43,17 @@ public class API {
         send.put("birthdate" , birthdate);
         send.put("profile" , profile);
         receive = ClientOnline.send(send);
-        return (boolean) receive.get("answer");
+        receive.get("answer");
     }
 
-    public static boolean publishPost(String username,Post post){
+    public static void publishPost(String username, Post post){
         Map<String,Object> send = new HashMap<>();
         Map<String,Object> receive;
         send.put("command" , Command.PUBLISH_POST);
         send.put("post" , post);
         send.put("username" , username);
         receive = ClientOnline.send(send);
-        return (boolean) receive.get("answer");
+        receive.get("answer");
     }
 
     public static boolean follow(String username , String target){
@@ -76,7 +76,7 @@ public class API {
         return (boolean) receive.get("answer");
     }
 
-    public static boolean like(String username , String target , Post post){
+    public static void like(String username , String target , Post post){
         Map<String,Object> send = new HashMap<>();
         Map<String,Object> receive;
         send.put("command" , Command.LIKE);
@@ -84,10 +84,10 @@ public class API {
         send.put("targetUsername" , target);
         send.put("post" , post);
         receive = ClientOnline.send(send);
-        return (boolean) receive.get("answer");
+        receive.get("answer");
     }
 
-    public static boolean dislike(String username , String target , Post post){
+    public static void dislike(String username , String target , Post post){
         Map<String,Object> send = new HashMap<>();
         Map<String,Object> receive;
         send.put("command" , Command.DISLIKE);
@@ -95,10 +95,10 @@ public class API {
         send.put("targetUsername" , target);
         send.put("post" , post);
         receive = ClientOnline.send(send);
-        return (boolean) receive.get("answer");
+        receive.get("answer");
     }
 
-    public static boolean addComment(String username , String target , Post post , Comment comment){
+    public static void addComment(String username , String target , Post post , Comment comment){
         Map<String,Object> send = new HashMap<>();
         Map<String,Object> receive;
         send.put("command" , Command.ADD_COMMENT);
@@ -107,7 +107,17 @@ public class API {
         send.put("post" , post);
         send.put("comment" , comment);
         receive = ClientOnline.send(send);
-        return (boolean) receive.get("answer");
+        receive.get("answer");
+    }
+
+    public static ArrayList<Comment> getComment(Post post , String username){
+        Map<String , Object> send = new HashMap<>();
+        Map<String , Object> receive;
+        send.put("command" , Command.GET_COMMENTS);
+        send.put("targetUsername" , username);
+        send.put("post" , post);
+        receive = ClientOnline.send(send);
+        return (ArrayList<Comment>) receive.get("comment");
     }
 
     public static ArrayList<Post> getPosts(String username){
@@ -169,6 +179,15 @@ public class API {
         send.put("username" , username);
         receive = ClientOnline.send(send);
         return (String) receive.get("answer");
+    }
+
+    public static void changePass(String username , String newPass){
+        Map<String,Object> send = new HashMap<>();
+        Map<String,Object> receive;
+        send.put("command" , Command.CHANGE_PASS);
+        send.put("newPass" , newPass);
+        send.put("username" , username);
+        receive = ClientOnline.send(send);
     }
 
     public static User getUser(String username){
