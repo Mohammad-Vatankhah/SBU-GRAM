@@ -153,14 +153,14 @@ public class API {
         receive.get("answer");
     }
 
-    public static Map<String , Object> getInfo(String username , String target){
+    public static User getInfo(String username , String target){
         Map<String,Object> send = new HashMap<>();
         Map<String,Object> receive;
         send.put("command" ,Command.GET_INFO);
         send.put("username" , username);
         send.put("targetUsername" , target);
         receive = ClientOnline.send(send);
-        return receive;
+        return (User) receive.get("user");
     }
 
     public static boolean logout(String username){

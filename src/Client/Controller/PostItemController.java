@@ -110,8 +110,20 @@ public class PostItemController {
     }
 
     public void writerID(MouseEvent mouseEvent) {
+        UserProfileController.user = post.getWriter();
+        try {
+            new PageLoader().load("UserProfile" , 414 , 637);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void publisherID(MouseEvent mouseEvent) {
+        UserProfileController.user = post.getPublisher();
+        try {
+            new PageLoader().load("UserProfile" , 414 , 637);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

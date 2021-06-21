@@ -250,14 +250,7 @@ public class API {
         String target = (String) receive.get("targetUsername");
         User user = Server.users.get(target);
         answer.put("answer" , true);
-        answer.put("name" , user.getName());
-        answer.put("lastName" , user.getLastName());
-        answer.put("location" , user.getLocation());
-        answer.put("birthdate" , user.getBirthdate());
-        answer.put("followers" , user.getFollowers().size());
-        answer.put("followings" , user.getFollowings());
-        answer.put("posts" , user.getPosts());
-        answer.put("profile" , user.getProfile());
+        answer.put("user" , user);
         answer.put("command" , Command.GET_INFO);
         Date date = new Date();
         System.out.println(username + " get info " + target + "\nmessage: " + target + user.getProfileAddress() + "\ntime: " + format.format(date));
