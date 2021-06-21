@@ -56,24 +56,24 @@ public class API {
         receive.get("answer");
     }
 
-    public static boolean follow(String username , String target){
+    public static void follow(String username , String target){
         Map<String,Object> send = new HashMap<>();
         Map<String,Object> receive;
         send.put("command" , Command.FOLLOW);
         send.put("username" , username);
         send.put("target" , target);
         receive = ClientOnline.send(send);
-        return (boolean) receive.get("answer");
+        receive.get("answer");
     }
 
-    public static boolean unfollow(String username , String target){
+    public static void unfollow(String username , String target){
         Map<String,Object> send = new HashMap<>();
         Map<String,Object> receive;
         send.put("command" , Command.UNFOLLOW);
         send.put("username" , username);
         send.put("target" , target);
         receive = ClientOnline.send(send);
-        return (boolean) receive.get("answer");
+        receive.get("answer");
     }
 
     public static void like(String username , String target , Post post){
@@ -163,13 +163,13 @@ public class API {
         return (User) receive.get("user");
     }
 
-    public static boolean logout(String username){
+    public static void logout(String username){
         Map<String,Object> send = new HashMap<>();
         Map<String,Object> receive;
         send.put("command" , Command.LOGOUT);
         send.put("username" , username);
         receive = ClientOnline.send(send);
-        return (boolean) receive.get("answer");
+        receive.get("answer");
     }
 
     public static String getPassword(String username){

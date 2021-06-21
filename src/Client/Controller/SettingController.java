@@ -32,6 +32,7 @@ public class SettingController {
     }
 
     public void logout(ActionEvent actionEvent){
+        API.logout(LoginController.currentUser);
         try {
             new PageLoader().load("login" , 363 , 470);
         } catch (IOException e) {

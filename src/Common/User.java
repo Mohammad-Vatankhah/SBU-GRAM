@@ -15,8 +15,8 @@ public class User implements Serializable {
     private String lastName;
     private String birthdate;
     private String location;
-    private CopyOnWriteArrayList<User> followings = new CopyOnWriteArrayList<>();
-    private CopyOnWriteArrayList<User> followers = new CopyOnWriteArrayList<>();
+    private CopyOnWriteArrayList<String> followings = new CopyOnWriteArrayList<>();
+    private CopyOnWriteArrayList<String> followers = new CopyOnWriteArrayList<>();
     private ArrayList<Post> posts = new ArrayList<>();
 
     public User(String name ,String lastName , String username, String password) {
@@ -91,27 +91,27 @@ public class User implements Serializable {
         this.location = location;
     }
 
-    public CopyOnWriteArrayList<User> getFollowings() {
+    public CopyOnWriteArrayList<String> getFollowings() {
         return followings;
     }
 
-    public void addFollowings(User user) {
+    public void addFollowings(String user) {
         this.followings.add(user);
     }
 
-    public void removeFollowings(User user){
+    public void removeFollowings(String user){
         this.followings.remove(user);
     }
 
-    public CopyOnWriteArrayList<User> getFollowers() {
+    public CopyOnWriteArrayList<String> getFollowers() {
         return followers;
     }
 
-    public void addFollowers(User user) {
+    public void addFollowers(String user) {
         this.followers.add(user);
     }
 
-    public void removeFollowers(User user){
+    public void removeFollowers(String user){
         this.followers.remove(user);
     }
 

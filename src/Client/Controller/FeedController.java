@@ -25,8 +25,8 @@ public class FeedController {
     @FXML
     public void initialize(){
         User currentUser = API.getUser(LoginController.currentUser);
-        for (User user:currentUser.getFollowings()){
-            posts.addAll(API.getPosts(user.getUsername()));
+        for (String user:currentUser.getFollowings()){
+            posts.addAll(API.getPosts(user));
         }
         posts.addAll(API.getPosts(LoginController.currentUser));
         Collections.sort(posts);

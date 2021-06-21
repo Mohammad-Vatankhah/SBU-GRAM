@@ -84,8 +84,8 @@ public class API {
         Map<String, Object> answer = new HashMap<>();
         String username = (String) receive.get("username");
         String target = (String) receive.get("target");
-        Server.users.get(username).addFollowings(Server.users.get(target));
-        Server.users.get(target).addFollowers(Server.users.get(username));
+        Server.users.get(username).addFollowings(target);
+        Server.users.get(target).addFollowers(username);
         answer.put("answer", true);
         answer.put("command", Command.FOLLOW);
         Date date = new Date();
@@ -98,8 +98,8 @@ public class API {
         Map<String, Object> answer = new HashMap<>();
         String username = (String) receive.get("username");
         String target = (String) receive.get("target");
-        Server.users.get(username).removeFollowings(Server.users.get(target));
-        Server.users.get(target).removeFollowers(Server.users.get(username));
+        Server.users.get(username).removeFollowings(target);
+        Server.users.get(target).removeFollowers(username);
         answer.put("answer", true);
         answer.put("command", Command.UNFOLLOW);
         Date date = new Date();
@@ -221,8 +221,14 @@ public class API {
         post.setPublisher(user.getUsername());
         post.setDate(new Date());
         post.removeAllLikesAndComments();
-        post.addRepost();
         user.addPost(post);
+        for (User user1:Server.users.values()){
+            for (Post post1:user1.getPosts()){
+                if (post1.equals(post)){
+                    post1.addRepost();
+                }
+            }
+        }
         answer.put("answer" , true);
         answer.put("command" , Command.REPOST);
         Date date = new Date();
@@ -253,7 +259,7 @@ public class API {
         answer.put("user" , user);
         answer.put("command" , Command.GET_INFO);
         Date date = new Date();
-        System.out.println(username + " get info " + target + "\nmessage: " + target + user.getProfileAddress() + "\ntime: " + format.format(date));
+        System.out.println(username + " get info " + target + "\nmessage: " + target + " " + user.getProfileAddress() + "\ntime: " + format.format(date));
         Server.dataBase.updateDataBase();
         return answer;
     }
