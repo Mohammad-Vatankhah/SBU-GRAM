@@ -71,7 +71,12 @@ public class PostItemController {
     }
 
     public void repost(MouseEvent mouseEvent){
-
+        API.repost(LoginController.currentUser , this.post);
+        try {
+            new PageLoader().load("feed" , 414 , 637);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void disLike(MouseEvent mouseEvent) {

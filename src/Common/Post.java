@@ -15,7 +15,7 @@ public class Post implements Serializable , Comparable<Post> {
     private byte[] image;
     private CopyOnWriteArrayList<String> likes = new CopyOnWriteArrayList<>();
     private int reposts = 0;
-    private final Date date;
+    private Date date;
     private CopyOnWriteArrayList<Comment> comments = new CopyOnWriteArrayList<>();
 
     public Post(String writer, String publisher , String title, String description , Date date) {
@@ -108,6 +108,16 @@ public class Post implements Serializable , Comparable<Post> {
 
     public int getNumOfLikes() {
         return numOfLikes;
+    }
+
+    public void removeAllLikesAndComments(){
+        comments.clear();
+        likes.clear();
+        numOfLikes = 0;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     @Override

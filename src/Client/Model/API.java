@@ -129,7 +129,7 @@ public class API {
         return (ArrayList<Post>) receive.get("answer");
     }
 
-    public static boolean updateProfile(String username , String newName , String newBirthdate , String newLastname , String newLocation , String newPhoneNumber){
+    public static void updateProfile(String username , String newName , String newBirthdate , String newLastname , String newLocation , String newPhoneNumber){
         Map<String,Object> send = new HashMap<>();
         Map<String,Object> receive;
         send.put("command" , Command.UPDATE_PROFILE);
@@ -140,17 +140,17 @@ public class API {
         send.put("newLocation" , newLocation);
         send.put("newPhoneNumber" , newPhoneNumber);
         receive = ClientOnline.send(send);
-        return (boolean) receive.get("answer");
+        receive.get("answer");
     }
 
-    public static boolean repost(String username , Post post){
+    public static void repost(String username , Post post){
         Map<String,Object> send = new HashMap<>();
         Map<String,Object> receive;
         send.put("command" , Command.REPOST);
         send.put("username" , username);
         send.put("post" , post);
         receive = ClientOnline.send(send);
-        return (boolean) receive.get("answer");
+        receive.get("answer");
     }
 
     public static Map<String , Object> getInfo(String username , String target){

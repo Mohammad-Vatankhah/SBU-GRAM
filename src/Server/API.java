@@ -219,6 +219,9 @@ public class API {
         String username = (String) receive.get("username");
         User user = Server.users.get(username);
         post.setPublisher(user.getUsername());
+        post.setDate(new Date());
+        post.removeAllLikesAndComments();
+        post.addRepost();
         user.addPost(post);
         answer.put("answer" , true);
         answer.put("command" , Command.REPOST);

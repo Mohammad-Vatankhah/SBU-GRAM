@@ -37,7 +37,7 @@
          </image>
       </ImageView>
       <Label fx:id="likes" layoutX="179.0" layoutY="468.0" prefHeight="18.0" prefWidth="22.0" text="likes" />
-      <ImageView fitHeight="46.0" fitWidth="46.0" layoutX="50.0" layoutY="424.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="46.0" fitWidth="46.0" layoutX="50.0" layoutY="424.0" onMouseClicked="#repost" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/F:/SBU/exc/AP/SBU_gram/images/repost%20icon.png" />
          </image>
