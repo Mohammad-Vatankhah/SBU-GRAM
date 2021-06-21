@@ -92,6 +92,7 @@ public class ClientHandler implements Runnable{
                         answer = API.changeProfilePhoto(receive);
                         break;
                 }
+                socketOut.reset();
                 socketOut.writeObject(answer);
                 socketOut.flush();
             } catch (IOException | ClassNotFoundException e) {

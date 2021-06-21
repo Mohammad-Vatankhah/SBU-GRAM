@@ -76,7 +76,6 @@ public class PostItemController {
 
     public void disLike(MouseEvent mouseEvent) {
         API.dislike(LoginController.currentUser , post.getPublisher() , post);
-        likes.setText(String.valueOf(post.getLikes().size() - 1));
         greenLike.setVisible(false);
         whiteLike.setVisible(true);
     }
@@ -101,7 +100,6 @@ public class PostItemController {
 
     public void likeImage(MouseEvent mouseEvent) {
         API.like(LoginController.currentUser , post.getPublisher() , post);
-        likes.setText(String.valueOf(post.getLikes().size() + 1));
         greenLike.setVisible(true);
         whiteLike.setVisible(false);
     }

@@ -56,6 +56,7 @@ public class ClientOnline {
     public static Map<String , Object> send(Map<String , Object> send){
         Map<String , Object> receive = null;
         try {
+            socketOut.reset();
             socketOut.writeObject(send);
             socketOut.flush();
             socketOut.reset();

@@ -43,6 +43,7 @@ public class DataBase {
         try {
             FileOutputStream fileOut = new FileOutputStream(USERS_FILE);
             ObjectOutputStream oos = new ObjectOutputStream(fileOut);
+            oos.reset();
             oos.writeObject(Server.users);
             fileOut.close();
             oos.close();
