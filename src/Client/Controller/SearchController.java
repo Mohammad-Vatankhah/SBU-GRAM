@@ -15,7 +15,7 @@ public class SearchController {
     public Button searchButton;
     public Button newPostButton;
     public Button profileButton;
-    public TextField usernameField;
+    public JFXTextField usernameField;
     public Label existError;
     public Label emptyError;
 

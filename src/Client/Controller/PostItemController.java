@@ -110,20 +110,36 @@ public class PostItemController {
     }
 
     public void writerID(MouseEvent mouseEvent) {
-        UserProfileController.user = post.getWriter();
-        try {
-            new PageLoader().load("UserProfile" , 414 , 637);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (post.getWriter().equals(LoginController.currentUser)) {
+            try {
+                new PageLoader().load("CurrentUserProfile", 414, 637);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else {
+            UserProfileController.user = post.getWriter();
+            try {
+                new PageLoader().load("UserProfile", 414, 637);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     public void publisherID(MouseEvent mouseEvent) {
-        UserProfileController.user = post.getPublisher();
-        try {
-            new PageLoader().load("UserProfile" , 414 , 637);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (post.getPublisher().equals(LoginController.currentUser)) {
+            try {
+                new PageLoader().load("CurrentUserProfile", 414, 637);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            UserProfileController.user = post.getPublisher();
+            try {
+                new PageLoader().load("UserProfile", 414, 637);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

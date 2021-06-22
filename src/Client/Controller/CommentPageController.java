@@ -14,7 +14,6 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -32,7 +31,7 @@ public class CommentPageController {
         comments = new CopyOnWriteArrayList<>(API.getComment(post , post.getPublisher()));
         Collections.sort(comments);
         commentList.setItems(FXCollections.observableArrayList(comments));
-        commentList.setCellFactory(commentList -> new CommentItem());
+        commentList.setCellFactory(commentList -> new commentCell());
     }
 
     public void backIcon(MouseEvent mouseEvent) {

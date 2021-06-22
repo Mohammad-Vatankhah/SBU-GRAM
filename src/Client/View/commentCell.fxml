@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="root" prefHeight="132.0" prefWidth="363.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Circle fx:id="profileCircle" fill="DODGERBLUE" layoutX="31.0" layoutY="31.0" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label fx:id="username" layoutX="67.0" layoutY="18.0" onMouseClicked="#username" text="username">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="description" layoutX="3.0" layoutY="42.0" prefHeight="71.0" prefWidth="358.0" text="descriptipn">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="date" layoutX="269.0" layoutY="113.0" text="date" />
+   </children>
+</AnchorPane>

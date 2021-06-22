@@ -3,8 +3,6 @@ package Client.Controller;
 import Common.Post;
 import javafx.scene.control.ListCell;
 
-import java.io.IOException;
-
 public class PostItem extends ListCell<Post> {
     @Override
     public void updateItem(Post post , boolean empty){
