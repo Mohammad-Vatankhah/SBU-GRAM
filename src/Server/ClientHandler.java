@@ -91,6 +91,12 @@ public class ClientHandler implements Runnable{
                     case CHANGE_PHOTO:
                         answer = API.changeProfilePhoto(receive);
                         break;
+                    case SET_SECURITY:
+                        answer = API.setSecurity(receive);
+                        break;
+                    case GET_SECURITY:
+                        answer = API.getSecurity(receive);
+                        break;
                 }
                 socketOut.reset();
                 socketOut.writeObject(answer);

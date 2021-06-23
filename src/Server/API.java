@@ -302,4 +302,27 @@ public class API {
         answer.put("command" , Command.GET_USER);
         return answer;
     }
+
+    public static Map<String , Object> setSecurity(Map<String , Object> receive){
+        Map<String , Object> answer = new HashMap<>();
+        String username = (String) receive.get("username");
+        String question = (String) receive.get("question");
+        String answer1 = (String) receive.get("answer");
+        Server.users.get(username).setSecurityQ(question);
+        Server.users.get(username).setSecurityA(answer1);
+        answer.put("answer" , true);
+        answer.put("command" , Command.SET_SECURITY);
+        return answer;
+    }
+
+    public static Map<String , Object> getSecurity(Map<String , Object> receive){
+        Map<String , Object> answer = new HashMap<>();
+        String username = (String) receive.get("username");
+        String question = Server.users.get(username).getSecurityQ();
+        String answer1 = Server.users.get(username).getSecurityA();
+        answer.put("question" , question);
+        answer.put("answer" , answer1);
+        answer.put("command" , Command.GET_SECURITY);
+        return answer;
+    }
 }

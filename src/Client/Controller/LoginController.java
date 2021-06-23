@@ -8,6 +8,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.util.Map;
@@ -59,6 +60,14 @@ public class LoginController {
             passwordField.setVisible(true);
             passwordVisible.setVisible(false);
             passwordField.setText(passwordVisible.getText());
+        }
+    }
+
+    public void forgotPass(MouseEvent mouseEvent) {
+        try {
+            new PageLoader().load("passRecovery" , 414 , 637);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

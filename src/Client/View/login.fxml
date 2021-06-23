@@ -24,6 +24,7 @@
             <Label fx:id="wrongPasswordLabel" layoutX="92.0" layoutY="275.0" text="Wrong password or username!" textFill="#d70000" visible="false" />
             <JFXCheckBox layoutX="275.0" layoutY="254.0" onAction="#showPass" prefHeight="0.0" prefWidth="0.0" text="show" />
             <JFXTextField fx:id="passwordVisible" focusColor="#11d819" layoutX="67.0" layoutY="250.0" prefHeight="25.0" prefWidth="208.0" promptText="Password" visible="false" />
+            <Label layoutX="83.0" layoutY="337.0" onMouseClicked="#forgotPass" text="Forgot your password?Click here!" />
          </children>
       </Pane>
    </children>

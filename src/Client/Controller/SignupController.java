@@ -94,7 +94,7 @@ public class SignupController {
             API.signup(username , password , name , lastName , location , phone , birthdate , userProfile , profileAddress);
             LoginController.currentUser = username;
             try {
-                new PageLoader().load("feed" , 414 , 637);
+                new PageLoader().load("SetPassRecovery" , 414 , 637);
             } catch (IOException e) {
                 e.printStackTrace();
             }

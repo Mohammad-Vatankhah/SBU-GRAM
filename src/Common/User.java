@@ -11,6 +11,8 @@ public class User implements Serializable {
     private final String username;
     private String password;
     private String phoneNumber;
+    private String securityQ;
+    private String securityA;
     private String name;
     private String lastName;
     private String birthdate;
@@ -137,5 +139,21 @@ public class User implements Serializable {
 
     public String getProfileAddress() {
         return profileAddress;
+    }
+
+    public String getSecurityQ() {
+        return securityQ;
+    }
+
+    public void setSecurityQ(String securityQ) {
+        this.securityQ = securityQ;
+    }
+
+    public String getSecurityA() {
+        return securityA;
+    }
+
+    public void setSecurityA(String securityA) {
+        this.securityA = securityA;
     }
 }

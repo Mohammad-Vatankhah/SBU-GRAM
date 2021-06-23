@@ -206,4 +206,22 @@ public class API {
         receive = ClientOnline.send(send);
         return (User) receive.get("answer");
     }
+
+    public static void setSecurity(String username , String question , String answer){
+        Map<String , Object> send = new HashMap<>();
+        send.put("command" , Command.SET_SECURITY);
+        send.put("question" , question);
+        send.put("username" , username);
+        send.put("answer" , answer);
+        ClientOnline.send(send);
+    }
+
+    public static Map<String , Object> getSecurity(String username){
+        Map<String , Object> send = new HashMap<>();
+        Map<String , Object> receive;
+        send.put("command" , Command.GET_SECURITY);
+        send.put("username" , username);
+        receive = ClientOnline.send(send);
+        return receive;
+    }
 }
