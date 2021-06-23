@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<?import com.jfoenix.controls.JFXTextField?>
 <AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.SetPasswordRecoveryController">
    <children>
       <MenuButton fx:id="questionMenu" layoutX="230.0" layoutY="325.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="91.0" text="Question">
@@ -20,7 +21,7 @@
             <MenuItem mnemonicParsing="false" onAction="#game" text="Game" />
         </items>
       </MenuButton>
-      <TextField fx:id="answer" layoutX="78.0" layoutY="386.0" prefHeight="26.0" prefWidth="244.0" promptText="Answer" />
+      <JFXTextField fx:id="answer" layoutX="78.0" layoutY="386.0" prefHeight="26.0" prefWidth="244.0" promptText="Answer" />
       <JFXButton buttonType="RAISED" layoutX="78.0" layoutY="484.0" onAction="#confirm" prefHeight="31.0" prefWidth="244.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Confirm" textFill="WHITE" />
       <ImageView fitHeight="196.0" fitWidth="244.0" layoutX="94.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
          <image>

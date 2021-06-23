@@ -8,10 +8,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<?import com.jfoenix.controls.JFXPasswordField?>
 <AnchorPane prefHeight="436.0" prefWidth="363.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.ChangePassRController">
    <children>
-      <PasswordField fx:id="newPass" layoutX="98.0" layoutY="184.0" prefHeight="26.0" prefWidth="176.0" promptText="New password" />
-      <PasswordField fx:id="confirmPass" layoutX="98.0" layoutY="228.0" prefHeight="26.0" prefWidth="176.0" promptText="Confirm new password" />
+      <JFXPasswordField fx:id="newPass" layoutX="98.0" layoutY="184.0" prefHeight="26.0" prefWidth="176.0" promptText="New password" />
+      <JFXPasswordField fx:id="confirmPass" layoutX="98.0" layoutY="228.0" prefHeight="26.0" prefWidth="176.0" promptText="Confirm new password" />
       <JFXButton buttonType="RAISED" layoutX="98.0" layoutY="308.0" onAction="#change" prefHeight="31.0" prefWidth="176.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Change" textFill="WHITE" />
       <ImageView fitHeight="153.0" fitWidth="168.0" layoutX="103.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>

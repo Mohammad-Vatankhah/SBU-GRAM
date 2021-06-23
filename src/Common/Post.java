@@ -130,11 +130,13 @@ public class Post implements Serializable , Comparable<Post> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Post post = (Post) o;
-        return Objects.equals(writer, post.writer);
+        return writer.equals(post.writer) && title.equals(post.title) && description.equals(post.description) && Arrays.equals(image, post.image);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(writer);
+        int result = Objects.hash(writer, title, description);
+        result = 31 * result + Arrays.hashCode(image);
+        return result;
     }
 }

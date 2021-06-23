@@ -9,7 +9,6 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
@@ -29,7 +28,7 @@ public class NewPostController {
     public Button newPostButton;
     public Button profileButton;
     public JFXTextArea descriptionField;
-    public TextField titleField;
+    public JFXTextField titleField;
     public JFXButton shareButton;
     public Button feedButton;
     public Button searchButton;

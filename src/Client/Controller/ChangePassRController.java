@@ -2,6 +2,7 @@ package Client.Controller;
 
 import Client.Model.API;
 import Client.Model.PageLoader;
+import com.jfoenix.controls.JFXPasswordField;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -11,8 +12,8 @@ import java.io.IOException;
 public class ChangePassRController {
     public Label matchErr;
     public Label regexErr;
-    public PasswordField newPass;
-    public PasswordField confirmPass;
+    public JFXPasswordField newPass;
+    public JFXPasswordField confirmPass;
 
     public void change(ActionEvent actionEvent) {
         String regex = "^(?=.*[0-9])"

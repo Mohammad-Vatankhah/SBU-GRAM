@@ -2,6 +2,7 @@ package Client.Controller;
 
 import Client.Model.API;
 import Client.Model.PageLoader;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
@@ -10,7 +11,7 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 
 public class SetPasswordRecoveryController {
-    public TextField answer;
+    public JFXTextField answer;
     public MenuButton questionMenu;
 
     public void confirm(ActionEvent actionEvent) {

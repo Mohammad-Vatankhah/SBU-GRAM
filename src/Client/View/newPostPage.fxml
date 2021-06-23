@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 
+<?import com.jfoenix.controls.JFXTextField?>
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.NewPostController">
     <children>
         <Button fx:id="feedButton" layoutY="560.0" mnemonicParsing="false" onAction="#feedButton" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #11d819;" />
@@ -37,7 +38,7 @@
             </image>
         </ImageView>
         <JFXTextArea fx:id="descriptionField" focusColor="#11d819" layoutX="12.0" layoutY="323.0" prefHeight="150.0" prefWidth="379.0" promptText="Description" />
-        <TextField fx:id="titleField" layoutX="127.0" layoutY="288.0" promptText="Title" />
+        <JFXTextField fx:id="titleField" layoutX="127.0" layoutY="288.0" promptText="Title" />
         <JFXButton fx:id="shareButton" buttonType="RAISED" layoutX="134.0" layoutY="522.0" onAction="#share" prefHeight="31.0" prefWidth="133.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Share!" textFill="WHITE" />
       <Rectangle fx:id="imageBox" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" layoutX="46.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" width="311.0" />
       <JFXButton fx:id="addImageButton" buttonType="RAISED" layoutX="135.0" layoutY="240.0" onAction="#addImage" prefHeight="31.0" prefWidth="133.0" ripplerFill="WHITE" style="-fx-background-color: #13da16;" text="Add image" textFill="WHITE" />

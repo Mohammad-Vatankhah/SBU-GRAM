@@ -2,10 +2,12 @@ package Client.Controller;
 
 import Client.Model.API;
 import Client.Model.PageLoader;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 
@@ -13,8 +15,8 @@ public class PassRecoveryController {
     public static String usernameS;
     public MenuButton questionMenu;
     public Label error;
-    public TextField answer;
-    public TextField username;
+    public JFXTextField answer;
+    public JFXTextField username;
     public Label usernameErr;
 
     public void car(ActionEvent actionEvent) {
@@ -51,6 +53,14 @@ public class PassRecoveryController {
                     e.printStackTrace();
                 }
             }
+        }
+    }
+
+    public void back(MouseEvent mouseEvent) {
+        try {
+            new PageLoader().load("login" , 363 , 470);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
